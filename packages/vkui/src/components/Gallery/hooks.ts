@@ -4,7 +4,7 @@ import { useDOM } from '../../lib/dom';
 
 export function useAutoPlay(timeout: number, slideIndex: number, callbackFn: VoidFunction) {
   const { clear: clearAutoPlay, set: setAutoPlay } = useTimeout(callbackFn, timeout);
-  const { document } = useDOM();
+  const { window } = useDOM();
 
   React.useEffect(
     () => (timeout ? setAutoPlay() : clearAutoPlay()),
@@ -14,26 +14,31 @@ export function useAutoPlay(timeout: number, slideIndex: number, callbackFn: Voi
   // Отключаем прокрутку слайдов при неактивной вкладке
   React.useEffect(
     function preventSlideChange() {
-      if (!document || !timeout) {
+      if (!window || !timeout) {
         return;
       }
 
       const changeAutoPlay = () => {
-        if (document.visibilityState === 'visible') {
-          clearAutoPlay();
-          setAutoPlay();
-        }
-        if (document.visibilityState === 'hidden') {
-          clearAutoPlay();
-        }
+        clearAutoPlay();
+
+        window.addEventListener(
+          'focus',
+          () => {
+            clearAutoPlay();
+            setAutoPlay();
+          },
+          {
+            once: true,
+          },
+        );
       };
 
-      document.addEventListener('visibilitychange', changeAutoPlay);
+      window.addEventListener('blur', changeAutoPlay);
 
       return () => {
-        document.removeEventListener('visibilitychange', changeAutoPlay);
+        window.removeEventListener('blur', changeAutoPlay);
       };
     },
-    [document, timeout, clearAutoPlay, setAutoPlay],
+    [window, timeout, clearAutoPlay, setAutoPlay],
   );
 }
