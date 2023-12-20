@@ -36,4 +36,4 @@ docs_storybook:
 
 docs_beta:
   - *package_vkui
-  - 'docs-beta'
+  - 'docs-beta/**'
