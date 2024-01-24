@@ -7,7 +7,9 @@ import {
   checkIsNotAutoPlacement,
   convertFloatingDataToReactCSSProperties,
   flipMiddleware,
+  getAlignmentAxis,
   getAutoPlacementAlign,
+  getAxisLength,
   hideMiddleware,
   offsetMiddleware,
   type Placement,
@@ -191,6 +193,41 @@ export const Popper = ({
         }),
       );
     }
+
+    middlewares.push({
+      name: 'compensateArrowMiddlewareAlignmentOffsetForSmallReferenceElements',
+      fn: (state) => {
+        const axis = getAlignmentAxis(state.placement);
+        const lengthPropName = getAxisLength(axis);
+
+        const shouldReduceAlighmentOffset = state.rects.reference[lengthPropName] < 50;
+        if (
+          !shouldReduceAlighmentOffset ||
+          !state.middlewareData.arrow ||
+          !state.middlewareData.arrow.alignmentOffset
+        ) {
+          return {};
+        }
+
+        const alignmentOffset = state.middlewareData.arrow.alignmentOffset;
+        if (!alignmentOffset) {
+          return {};
+        }
+
+        return {
+          y: state.y + alignmentOffset,
+          data: { alighmentOffsetCompensated: true },
+        };
+      },
+    });
+    middlewares.push({
+      name: 'NExt middleware',
+      fn: (state) => {
+        console.log('Next middleware:  ', state);
+
+        return {};
+      },
+    });
 
     if (hideWhenReferenceHidden) {
       middlewares.push(hideMiddleware());

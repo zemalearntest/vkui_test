@@ -9,6 +9,7 @@ export {
   hide as hideMiddleware,
   getOverflowAncestors,
 } from '@vkontakte/vkui-floating-ui/react-dom';
+export { getAxisLength, getAlignmentAxis } from '@vkontakte/vkui-floating-ui/utils';
 
 export type {
   Placement,
