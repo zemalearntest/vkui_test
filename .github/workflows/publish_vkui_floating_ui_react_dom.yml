@@ -3,7 +3,7 @@ name: 'Publish @vkontakte/vkui-floating-ui'
 on:
   workflow_dispatch:
 
-run-name: "@vkontakte/vkui-floating-ui: remove alpha tag"
+run-name: "@vkontakte/vkui-floating-ui: unpublish 0.2.0 and set latest tag to 0.1.4"
 
 jobs:
   publish:
@@ -36,8 +36,9 @@ jobs:
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Action"
 
-      - name: Publishing tagged release
+      - name: NPM it
         run: |
-          npm dist-tag rm @vkontakte/vkui-floating-ui alpha
+          npm dist-tag add @vkontakte/vkui-floating-ui@0.1.4 latest
+          npm unpublish @vkontakte/vkui-floating-ui@0.2.0
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_PUBLISH_TOKEN }}
