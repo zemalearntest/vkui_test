@@ -3,7 +3,7 @@ name: 'Publish @vkontakte/vkui-floating-ui'
 on:
   workflow_dispatch:
 
-run-name: "@vkontakte/vkui-floating-ui: unpublish 0.2.0 (force)"
+run-name: "@vkontakte/vkui-floating-ui: deprecate 0.2.0"
 
 jobs:
   publish:
@@ -28,9 +28,6 @@ jobs:
           always-auth: true
           registry-url: 'https://registry.npmjs.org'
 
-      - name: Install dependencies
-        run: YARN_ENABLE_SCRIPTS=false yarn install --immutable
-
       - name: Set Git credentials
         run: |
           git config --local user.email "actions@github.com"
@@ -38,6 +35,6 @@ jobs:
 
       - name: NPM it
         run: |
-          npm unpublish @vkontakte/vkui-floating-ui@0.2.0 --force
+          npm deprecate @vkontakte/vkui-floating-ui@0.2.0 "This is a duplicate of the version 'v0.1.4'. Use 'v0.1.4' and above. Due to this typo, the stable minor version will be released as 'v0.2.1'."
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_PUBLISH_TOKEN }}
