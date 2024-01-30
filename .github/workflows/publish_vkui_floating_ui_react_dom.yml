@@ -3,7 +3,7 @@ name: 'Publish @vkontakte/vkui-floating-ui'
 on:
   workflow_dispatch:
 
-run-name: "@vkontakte/vkui-floating-ui: unpublish 0.2.0 and set latest tag to 0.1.4"
+run-name: "@vkontakte/vkui-floating-ui: unpublish 0.2.0 (force)"
 
 jobs:
   publish:
@@ -38,7 +38,6 @@ jobs:
 
       - name: NPM it
         run: |
-          npm dist-tag add @vkontakte/vkui-floating-ui@0.1.4 latest
-          npm unpublish @vkontakte/vkui-floating-ui@0.2.0
+          npm unpublish @vkontakte/vkui-floating-ui@0.2.0 --force
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_PUBLISH_TOKEN }}
