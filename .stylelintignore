@@ -2,6 +2,7 @@ node_modules/
 dist/
 styleguide/
 coverage/
+docusaurus/
 !packages/vkui
 tmp/
 storybook-static/

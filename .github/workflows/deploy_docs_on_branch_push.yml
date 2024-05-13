@@ -13,6 +13,7 @@ on:
       - '**/*.md'
       - '!packages/vkui/src/**/*.md'
       - '!styleguide/pages/**/*.md'
+      - '!docusaurus/docs/**/*.md'
       - '**/__image_snapshots__/*.png'
 
 env:
@@ -29,6 +30,7 @@ jobs:
     outputs:
       docs_styleguide: ${{ steps.changes.outputs.docs_styleguide }}
       docs_storybook: ${{ steps.changes.outputs.docs_storybook }}
+      docs_docusaurus: ${{ steps.changes.outputs.docs_docusaurus }}
 
     steps:
       - name: Checkout
@@ -116,3 +118,44 @@ jobs:
         if: ${{ steps.deploy.outcome == 'success' }}
         id: url
         run: echo "${{ env.AWS_S3_URL }}/next/storybook/index.html"
+
+  build_and_deploy_docusaurus:
+    if: ${{ !cancelled() && needs.changed_files.outputs.docs_docusaurus == 'true' }}
+    runs-on: ubuntu-latest
+    name: Deploy docs (docusaurus)
+    needs: changed_files
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup NodeJS
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: YARN_ENABLE_SCRIPTS=false yarn install --immutable
+
+      - name: Build
+        run: yarn docs:docusaurus:build
+        env:
+          DOCUSAURUS_URL: ${{ env.AWS_S3_URL }}
+          DOCUSAURUS_BASE_URL: /next/docusaurus/
+
+      - name: Upload to S3
+        id: deploy
+        uses: VKCOM/gh-actions/VKUI/s3@main
+        with:
+          awsAccessKeyId: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          awsSecretAccessKey: ${{ secrets.AWS_SECRET_KEY }}
+          awsBucket: ${{ vars.AWS_BUCKET }}
+          awsEndpoint: https://${{ vars.AWS_ENDPOINT }}
+          command: upload
+          commandUploadSrc: docusaurus/build
+          commandUploadDist: next/docusaurus
+
+      - name: Create doc url
+        if: ${{ steps.deploy.outcome == 'success' }}
+        id: url
+        run: echo "${{ env.AWS_S3_URL }}/next/docusaurus/index.html"

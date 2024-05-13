@@ -4,6 +4,7 @@ PUBLISHING.md
 # Builds
 dist/
 storybook-static/
+build/
 
 # Dependency directory
 node_modules/
@@ -22,10 +23,14 @@ all-blob-reports/
 
 # Caches
 .cache
+.cache-loader
 tmp/
 
 # SWC
 .swc
+
+# Docusaurus
+.docusaurus
 
 # Coverage directory used by tools like istanbul
 coverage
