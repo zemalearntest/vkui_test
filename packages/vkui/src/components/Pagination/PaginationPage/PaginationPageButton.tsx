@@ -5,7 +5,6 @@ import { Tappable, type TappableProps } from '../../Tappable/Tappable';
 import { Text } from '../../Typography/Text/Text';
 import { VisuallyHidden } from '../../VisuallyHidden/VisuallyHidden';
 import { PaginationProps } from '../Pagination';
-import { getPageLabelDefault } from '../utils';
 import { getPaginationPageClassNames } from './usePaginationPageClasses';
 import styles from './PaginationPage.module.css';
 
@@ -26,7 +25,7 @@ export const getTappablePropsFromPaginationPage = (
 ): TappableProps & { 'data-page': number } => {
   const {
     isCurrent = false,
-    getPageLabel = getPageLabelDefault,
+    getPageLabel = () => '',
     children,
     className,
     disabled,

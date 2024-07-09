@@ -15,7 +15,6 @@ import {
   PaginationPageButton,
 } from './PaginationPage/PaginationPageButton';
 import { PaginationPageEllipsis } from './PaginationPage/PaginationPageEllipsis';
-import { getPageLabelDefault } from './utils';
 import styles from './Pagination.module.css';
 
 export interface PaginationProps extends Omit<HTMLAttributesWithRootRef<HTMLElement>, 'onChange'> {
@@ -103,8 +102,8 @@ export const Pagination = ({
   prevButtonCaption = 'Назад',
   nextButtonCaption = 'Вперёд',
   navigationButtonsStyle = 'icon',
-  getPageLabel = getPageLabelDefault,
-  navigationLabel = 'Навигация по страницам',
+  getPageLabel = () => '',
+  navigationLabel = 'Страницы',
   navigationLabelComponent = 'h2',
   prevButtonLabel = 'Перейти на предыдущую страницу',
   nextButtonLabel = 'Перейти на следующую страницу',
