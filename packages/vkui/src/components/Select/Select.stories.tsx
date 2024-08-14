@@ -8,7 +8,7 @@ const story: Meta<SelectProps> = {
   title: 'Forms/Select',
   component: Select,
   parameters: { ...CanvasFullLayout, ...DisableCartesianParam },
-  args: { onOpen: fn(), onClose: fn() },
+  args: { onOpen: fn(), onClose: fn(), options: [] },
 };
 
 export default story;
