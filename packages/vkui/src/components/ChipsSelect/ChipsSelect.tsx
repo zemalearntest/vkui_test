@@ -80,6 +80,7 @@ export interface ChipsSelectProps<O extends ChipOption>
       CustomSelectDropdownProps,
       'overscrollBehavior' | 'autoHideScrollbar' | 'autoHideScrollbarDelay'
     > {
+  useCustomScrollViewFallback?: boolean;
   placement?: 'top' | 'bottom';
   /**
    * Отрисовка Spinner вместо списка опций в выпадающем списке
@@ -167,9 +168,12 @@ export const ChipsSelect = <Option extends ChipOption>({
   dropdownTestId,
   onClose,
   onOpen,
-  overscrollBehavior,
   renderDropdown,
-
+  // CustomScrollView
+  useCustomScrollViewFallback,
+  overscrollBehavior,
+  autoHideScrollbar,
+  autoHideScrollbarDelay,
   // ChipsInputProps
   getRef,
   value: valueProp,
@@ -602,6 +606,10 @@ export const ChipsSelect = <Option extends ChipOption>({
           forcePortal={forceDropdownPortal}
           noMaxHeight={noMaxHeight}
           offsetDistance={dropdownOffsetDistance}
+          // CustomScrollView
+          useCustomScrollViewFallback={useCustomScrollViewFallback}
+          autoHideScrollbar={autoHideScrollbar}
+          autoHideScrollbarDelay={autoHideScrollbarDelay}
           overscrollBehavior={overscrollBehavior}
           // a11y
           id={dropdownId}

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import type { TimeoutId } from '../../types';
+import type { TimeoutId } from '../../../types';
 
 /**
  * 'temporary-visible' – "планирует" скрытие ползунка через N миллисекунд. Если тайм-аут не успеет

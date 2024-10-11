@@ -16,14 +16,6 @@
   outline: none;
 }
 
-.boxOverscrollBehaviorContain {
-  overscroll-behavior: contain;
-}
-
-.boxOverscrollBehaviorNone {
-  overscroll-behavior: none;
-}
-
 .boxHorizontalEnabled {
   padding-inline-end: 0;
   overflow-x: scroll;

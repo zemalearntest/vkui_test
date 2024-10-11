@@ -52,6 +52,7 @@ export const Select = <OptionT extends CustomSelectOptionInterface>({
     readOnly,
     getSelectInputRef,
     overscrollBehavior,
+    useCustomScrollViewFallback,
     beforeAlign,
     afterAlign,
     ...restProps

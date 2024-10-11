@@ -1,0 +1,7 @@
+.boxOverscrollBehaviorContain {
+  overscroll-behavior: contain;
+}
+
+.boxOverscrollBehaviorNone {
+  overscroll-behavior: none;
+}

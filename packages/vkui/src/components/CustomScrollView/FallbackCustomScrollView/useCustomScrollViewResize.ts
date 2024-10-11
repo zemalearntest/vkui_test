@@ -1,8 +1,8 @@
-import { useEventListener } from '../../hooks/useEventListener';
-import { useResizeObserver } from '../../hooks/useResizeObserver';
-import { useStableCallback } from '../../hooks/useStableCallback';
-import { useDOM } from '../../lib/dom';
-import { useIsomorphicLayoutEffect } from '../../lib/useIsomorphicLayoutEffect';
+import { useEventListener } from '../../../hooks/useEventListener';
+import { useResizeObserver } from '../../../hooks/useResizeObserver';
+import { useStableCallback } from '../../../hooks/useStableCallback';
+import { useDOM } from '../../../lib/dom';
+import { useIsomorphicLayoutEffect } from '../../../lib/useIsomorphicLayoutEffect';
 
 interface UseCustomScrollViewResizeProps {
   windowResize?: boolean;

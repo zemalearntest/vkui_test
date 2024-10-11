@@ -1,6 +1,6 @@
 import { act } from 'react';
 import { renderHook } from '@testing-library/react';
-import { fakeTimers } from '../../testing/utils';
+import { fakeTimers } from '../../../testing/utils';
 import { useTrackerVisibility } from './useTrackerVisibility';
 
 describe(useTrackerVisibility, () => {

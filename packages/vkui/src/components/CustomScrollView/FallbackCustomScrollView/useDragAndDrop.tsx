@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { useEventListener } from '../../hooks/useEventListener';
-import { useDOM } from '../../lib/dom';
+import { useEventListener } from '../../../hooks/useEventListener';
+import { useDOM } from '../../../lib/dom';
 
 export const useDragAndDrop = (
   onDragStart: (e: React.MouseEvent) => void,

@@ -2,11 +2,11 @@
 
 import * as React from 'react';
 import { classNames } from '@vkontakte/vkjs';
-import { stopPropagation } from '../../lib/utils';
+import { stopPropagation } from '../../../lib/utils';
 import type { ScrollProps } from './types';
 import { useDragAndDrop } from './useDragAndDrop';
 import { useVerticalScrollController } from './useVerticalScrollController';
-import styles from './CustomScrollView.module.css';
+import styles from './FallbackCustomScrollView.module.css';
 
 export const ScrollY = ({
   barHandlers,

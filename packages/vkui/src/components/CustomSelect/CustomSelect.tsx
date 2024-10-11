@@ -10,7 +10,7 @@ import type { Placement } from '../../lib/floating';
 import { defaultFilterFn, type FilterFn } from '../../lib/select';
 import { useIsomorphicLayoutEffect } from '../../lib/useIsomorphicLayoutEffect';
 import { warnOnce } from '../../lib/warnOnce';
-import type { TrackerOptionsProps } from '../CustomScrollView/useTrackerVisibility';
+import type { TrackerOptionsProps } from '../CustomScrollView/FallbackCustomScrollView/useTrackerVisibility';
 import {
   CustomSelectDropdown,
   type CustomSelectDropdownProps,
@@ -132,11 +132,9 @@ export interface SelectProps<
 > extends NativeSelectProps,
     Omit<FormFieldProps, 'maxHeight'>,
     TrackerOptionsProps,
-    Pick<
-      CustomSelectDropdownProps,
-      'overscrollBehavior' | 'autoHideScrollbar' | 'autoHideScrollbarDelay'
-    >,
+    Pick<CustomSelectDropdownProps, 'overscrollBehavior'>,
     Pick<CustomSelectInputProps, 'minLength' | 'maxLength' | 'pattern' | 'readOnly'> {
+  useCustomScrollViewFallback?: boolean;
   /**
    * ref на внутрений компонент input
    */
@@ -269,6 +267,7 @@ export function CustomSelect<OptionInterfaceT extends CustomSelectOptionInterfac
     required,
     getSelectInputRef,
     overscrollBehavior,
+    useCustomScrollViewFallback = false,
     ...restProps
   } = props;
 
@@ -902,17 +901,19 @@ export function CustomSelect<OptionInterfaceT extends CustomSelectOptionInterfac
           onPlacementChange={setPopperPlacement}
           onMouseLeave={resetFocusedOption}
           fetching={fetching}
-          overscrollBehavior={overscrollBehavior}
           offsetDistance={dropdownOffsetDistance}
           autoWidth={dropdownAutoWidth}
           forcePortal={forceDropdownPortal}
-          autoHideScrollbar={autoHideScrollbar}
-          autoHideScrollbarDelay={autoHideScrollbarDelay}
           noMaxHeight={noMaxHeight}
           role="listbox"
           id={popupAriaId}
           aria-labelledby={ariaLabelledBy}
           tabIndex={-1}
+          // CustomScrollView
+          useCustomScrollViewFallback={useCustomScrollViewFallback}
+          overscrollBehavior={overscrollBehavior}
+          autoHideScrollbar={autoHideScrollbar}
+          autoHideScrollbarDelay={autoHideScrollbarDelay}
         >
           {resolvedContent}
         </CustomSelectDropdown>
