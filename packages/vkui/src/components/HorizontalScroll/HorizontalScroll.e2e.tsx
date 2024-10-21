@@ -16,11 +16,14 @@ test.describe('HorizontalScroll', () => {
     onlyForPlatforms: ['android'],
   });
   test('ViewWidth.SMALL_TABLET hasPointer=true', async ({
+    page,
     mount,
     expectScreenshotClippedToContent,
     componentPlaygroundProps,
   }) => {
     await mount(<HorizontalScrollSmallTabletPlayground {...componentPlaygroundProps} />);
+    // flaky тест, в котором мышка оказывается на элементе в центре
+    await page.mouse.move(0, 0);
     await expectScreenshotClippedToContent();
   });
 });
