@@ -1,10 +1,12 @@
+'use client';
+
 import * as React from 'react';
 import { usePatchChildren } from '../../hooks/usePatchChildren';
 import { injectAriaExpandedPropByRole } from '../../lib/accessibility';
-import { UseFloatingRefs } from '../../lib/floating/types/common';
-import { ReferenceProps } from '../../lib/floating/useFloatingWithInteractions/types';
+import { type UseFloatingRefs } from '../../lib/floating/types/common';
+import { type ReferenceProps } from '../../lib/floating/useFloatingWithInteractions/types';
 import { useIsomorphicLayoutEffect } from '../../lib/useIsomorphicLayoutEffect';
-import { PopoverProps } from './Popover';
+import { type PopoverProps } from './Popover';
 
 type Props<T extends HTMLElement = HTMLElement> = Required<Pick<PopoverProps, 'role' | 'shown'>> & {
   children?: React.ReactElement;

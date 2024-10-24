@@ -1,8 +1,10 @@
+'use client';
+
 import * as React from 'react';
-import { UseFloatingRefs } from '../../lib/floating/types/common';
-import { ReferenceProps } from '../../lib/floating/useFloatingWithInteractions/types';
+import { type UseFloatingRefs } from '../../lib/floating/types/common';
+import { type ReferenceProps } from '../../lib/floating/useFloatingWithInteractions/types';
 import { useIsomorphicLayoutEffect } from '../../lib/useIsomorphicLayoutEffect';
-import { PopoverProps } from './Popover';
+import { type PopoverProps } from './Popover';
 
 const getAnchorAttributes = (state: boolean, role?: React.AriaRole) => {
   const attributes: Record<string, string | boolean> = {};
