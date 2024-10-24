@@ -1,32 +1,35 @@
+import { Children } from 'react';
 import { classNames } from '@vkontakte/vkjs';
 import {
   calculateGap,
   columnGapClassNames,
+  type GapProp,
   type GapsProp,
   rowGapClassNames,
 } from '../../lib/layouts';
-import type { CSSCustomProperties, HTMLAttributesWithRootRef } from '../../types';
+import type { CSSCustomProperties } from '../../types';
 import { RootComponent } from '../RootComponent/RootComponent';
+import type { RootComponentProps } from '../RootComponent/RootComponent';
 import { FlexItem, type FlexItemProps } from './FlexItem/FlexItem';
 import styles from './Flex.module.css';
 
 export type { FlexItemProps };
 
 const justifyClassNames = {
-  'start': styles['Flex--justify-start'],
-  'end': styles['Flex--justify-end'],
-  'center': styles['Flex--justify-center'],
-  'space-around': styles['Flex--justify-space-around'],
-  'space-between': styles['Flex--justify-space-between'],
-  'space-evenly': styles['Flex--justify-space-evenly'],
+  'start': styles.justifyStart,
+  'end': styles.justifyEnd,
+  'center': styles.justifyCenter,
+  'space-around': styles.justifySpaceAround,
+  'space-between': styles.justifySpaceBetween,
+  'space-evenly': styles.justifySpaceEvenly,
 };
 
 const alignClassNames = {
-  start: styles['Flex--align-start'],
-  end: styles['Flex--align-end'],
-  center: styles['Flex--align-center'],
-  stretch: styles['Flex--align-stretch'],
-  baseline: styles['Flex--align-baseline'],
+  start: styles.alignStart,
+  end: styles.alignEnd,
+  center: styles.alignCenter,
+  stretch: styles.alignStretch,
+  baseline: styles.alignBaseline,
 };
 
 type FlexContentProps =
@@ -37,7 +40,7 @@ type FlexContentProps =
   | 'space-between'
   | 'space-evenly';
 
-export interface FlexProps extends HTMLAttributesWithRootRef<HTMLDivElement> {
+export interface FlexProps extends Omit<RootComponentProps<HTMLElement>, 'baseClassName'> {
   /**
    * Направление осей, эквивалентно `flex-direction`.
    */
@@ -45,9 +48,7 @@ export interface FlexProps extends HTMLAttributesWithRootRef<HTMLDivElement> {
   /**
    * Отступы между элементами.
    * Значение из списка предопределённых пресетов или число, которое будет приведено к пикселям.
-   * Через массив можно задать отступ между столбцами и строками [column, row], если они отличаются.
-   *
-   * TODO [>=7]: порядок следования будет [row, column]
+   * Через массив можно задать отступ между столбцами и строками [row, column], если они отличаются.
    */
   gap?: GapsProp;
   /**
@@ -83,9 +84,41 @@ export const Flex: React.FC<FlexProps> & {
   direction = 'row',
   style: styleProp,
   reverse = false,
+  children,
   ...props
 }: FlexProps) => {
-  const [columnGap, rowGap] = calculateGap(gap);
+  const withGaps = Children.count(children) > 1 && gap;
+  const [rowGap, columnGap] = calculateGap(withGaps ? gap : undefined);
+
+  return (
+    <RootComponent
+      {...props}
+      baseClassName={classNames(
+        styles.host,
+        !noWrap && styles.wrap,
+        reverse && styles.reverse,
+        direction !== 'row' && styles.directionColumn,
+        margin !== 'none' && styles.marginAuto,
+        align && alignClassNames[align],
+        justify && justifyClassNames[justify],
+        withGaps && styles.withGaps,
+        withGaps && getGapsPresets(rowGap, columnGap),
+      )}
+      style={withGaps ? { ...getGapsByUser(rowGap, columnGap), ...styleProp } : styleProp}
+    >
+      {children}
+    </RootComponent>
+  );
+};
+
+function getGapsPresets(rowGap?: GapProp, columnGap?: GapProp) {
+  return classNames(
+    typeof rowGap === 'string' && rowGapClassNames[rowGap],
+    typeof columnGap === 'string' && columnGapClassNames[columnGap],
+  );
+}
+
+function getGapsByUser(rowGap?: GapProp, columnGap?: GapProp) {
   const style: CSSCustomProperties = {};
 
   if (typeof rowGap === 'number') {
@@ -95,23 +128,7 @@ export const Flex: React.FC<FlexProps> & {
     style['--vkui_internal--column_gap'] = `${columnGap}px`;
   }
 
-  return (
-    <RootComponent
-      {...props}
-      baseClassName={classNames(
-        styles.Flex,
-        !noWrap && styles['Flex--wrap'],
-        reverse && styles['Flex--reverse'],
-        direction !== 'row' && styles['Flex--direction-column'],
-        margin !== 'none' && styles['Flex--margin-auto'],
-        typeof columnGap === 'string' && columnGapClassNames[columnGap],
-        typeof rowGap === 'string' && rowGapClassNames[rowGap],
-        align && alignClassNames[align],
-        justify && justifyClassNames[justify],
-      )}
-      style={{ ...styleProp, ...style }}
-    />
-  );
-};
+  return style;
+}
 
 Flex.Item = FlexItem;

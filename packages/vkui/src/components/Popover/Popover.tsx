@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 import { classNames } from '@vkontakte/vkjs';
 import { animationFadeClassNames, transformOriginClassNames } from '../../lib/animation';
@@ -22,6 +24,7 @@ import {
   type FloatingArrowProps as FloatingArrowPropsPrivate,
 } from '../FloatingArrow/FloatingArrow';
 import { FocusTrap } from '../FocusTrap/FocusTrap';
+import type { FocusTrapProps } from '../FocusTrap/FocusTrap';
 import { PopoverWithAnchor } from './PopoverWithAnchor';
 import { PopoverWithChildren } from './PopoverWithChildren';
 import styles from './Popover.module.css';
@@ -85,7 +88,7 @@ type AllowedFloatingComponentProps = Pick<
  * @public
  */
 export interface PopoverProps
-  extends AllowedFloatingComponentProps,
+  extends Omit<AllowedFloatingComponentProps, 'autoFocus'>,
     Omit<HTMLAttributesWithRootRef<HTMLDivElement>, keyof FloatingComponentProps> {
   /**
    * Отключает у всплывающего элемента стилизацию по умолчанию.
@@ -124,6 +127,7 @@ export interface PopoverProps
    * Используется для того, чтобы не удалять поповер из DOM дерева при скрытии.
    */
   keepMounted?: boolean;
+  autoFocus?: FocusTrapProps['autoFocus'];
   /**
    * Элемент используется вместо `children`. При передаче его, `children` можно не передавать
    */
@@ -233,7 +237,7 @@ export const Popover = ({
       const { arrow: arrowCoords } = middlewareData;
       arrow = (
         <FloatingArrow
-          iconClassName={noStyling ? undefined : styles['Popover__arrow']}
+          iconClassName={noStyling ? undefined : styles.arrow}
           {...arrowProps}
           coords={arrowCoords}
           placement={resolvedPlacement}
@@ -247,7 +251,7 @@ export const Popover = ({
       <AppRootPortal usePortal={usePortal}>
         <div
           ref={refs.setFloating}
-          className={classNames(styles['Popover'], hidden && styles['Popover--hidden'])}
+          className={classNames(styles.host, hidden && styles.hidden)}
           {...floatingProps}
           style={{
             zIndex: !hidden ? zIndex : undefined,
@@ -258,8 +262,8 @@ export const Popover = ({
             {...restPopoverProps}
             role={role}
             className={classNames(
-              styles['Popover__in'],
-              noStyling ? undefined : styles['Popover__in--withStyling'],
+              styles.in,
+              noStyling ? undefined : styles.inWithStyling,
               willBeHide ? animationFadeClassNames.out : animationFadeClassNames.in,
               transformOriginClassNames[resolvedPlacement],
               className,

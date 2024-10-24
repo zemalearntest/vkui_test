@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from 'react';
 import { noop } from '@vkontakte/vkjs';
 import { useAdaptivityWithJSMediaQueries } from '../../hooks/useAdaptivityWithJSMediaQueries';
@@ -20,10 +22,13 @@ export interface ActionSheetOnCloseOptions {
 }
 
 export interface ActionSheetProps
-  extends Pick<SharedDropdownProps, 'toggleRef' | 'popupOffsetDistance' | 'placement'>,
-    React.HTMLAttributes<HTMLDivElement> {
-  header?: React.ReactNode;
-  text?: React.ReactNode;
+  extends Pick<
+      SharedDropdownProps,
+      'toggleRef' | 'popupOffsetDistance' | 'placement' | 'autoFocus'
+    >,
+    Omit<React.HTMLAttributes<HTMLDivElement>, 'autoFocus' | 'title'> {
+  title?: React.ReactNode;
+  description?: React.ReactNode;
   /**
    * Закрыть попап по клику снаружи.
    */
@@ -41,8 +46,8 @@ export interface ActionSheetProps
 export const ActionSheet = ({
   children,
   className,
-  header,
-  text,
+  title,
+  description,
   style,
   iosCloseItem,
   popupOffsetDistance,
@@ -108,21 +113,21 @@ export const ActionSheet = ({
         className={mode === 'menu' ? className : undefined}
         style={mode === 'menu' ? style : undefined}
       >
-        <div className={styles['ActionSheet__content-wrapper']}>
-          {(header || text) && (
-            <div className={styles['ActionSheet__header']}>
-              {header && (
-                <Footnote weight="2" className={styles['ActionSheet__title']}>
-                  {header}
+        <div className={styles.contentWrapper}>
+          {(title || description) && (
+            <div className={styles.header}>
+              {title && (
+                <Footnote weight="2" className={styles.title}>
+                  {title}
                 </Footnote>
               )}
-              {text && <Footnote className={styles['ActionSheet__text']}>{text}</Footnote>}
+              {description && <Footnote className={styles.description}>{description}</Footnote>}
             </div>
           )}
           {children}
         </div>
         {platform === 'ios' && mode === 'sheet' && (
-          <div className={styles['ActionSheet__close-item-wrapper--ios']}>
+          <div className={styles.closeItemWrapperIos}>
             {iosCloseItem ?? <ActionSheetDefaultIosCloseItem />}
           </div>
         )}
