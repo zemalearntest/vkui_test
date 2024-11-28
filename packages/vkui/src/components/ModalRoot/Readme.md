@@ -27,7 +27,7 @@ const App = () => {
     </ModalRoot>
   );
 
-  return <SplitLayout>...{modal}</SplitLayout>;
+  return <AppRoot>...{modal}</AppRoot>;
 };
 ```
 
