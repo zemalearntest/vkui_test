@@ -13,7 +13,7 @@
 
 ## Структура
 
-Этот компонент должен быть передан в качестве свойства `modal` компоненту [`SplitLayout`](#/SplitLayout).
+Начиная с VKUI v7 этот компонент можно объявить в любом месте приложения в пределах [`AppRoot`](#/AppRoot). Больше нет необходимости явно передавать его в свойство `modal` компоненту [`SplitLayout`](#/SplitLayout).
 
 > ⚠️ Структура модальных страниц и карточек должна определяться единожды на старте приложения. Структура – это _декларация_ приложения.
 > То есть, один раз определив структуру вида:
@@ -27,7 +27,7 @@ const App = () => {
     </ModalRoot>
   );
 
-  return <SplitLayout modal={modal}>...</SplitLayout>;
+  return <SplitLayout>...{modal}</SplitLayout>;
 };
 ```
 
@@ -530,32 +530,31 @@ const App = () => {
   );
 
   return (
-    <SplitLayout modal={modal}>
-      <SplitCol>
-        <View activePanel="modals">
-          <Panel id="modals">
-            <PanelHeader>Модальные окна</PanelHeader>
-            <Group>
-              <CellButton onClick={() => changeActiveModal(MODAL_PAGE_FILTERS)}>
-                Открыть модальную страницу
-              </CellButton>
-              <CellButton multiline onClick={() => changeActiveModal(MODAL_PAGE_FULLSCREEN)}>
-                Открыть полноэкранную модальную страницу
-              </CellButton>
-              <CellButton multiline onClick={() => changeActiveModal(MODAL_PAGE_WITH_FIXED_HEIGHT)}>
-                Открыть модальную страницу c фиксированной высотой
-              </CellButton>
-              <CellButton multiline onClick={() => changeActiveModal(MODAL_PAGE_DYNAMIC)}>
-                Открыть модальную страницу с динамической высотой
-              </CellButton>
-              <CellButton onClick={() => changeActiveModal(MODAL_CARD_MONEY_SEND)}>
-                Открыть модальные карточки
-              </CellButton>
-            </Group>
-          </Panel>
-        </View>
-      </SplitCol>
-    </SplitLayout>
+    <React.Fragment>
+      {modal}
+      <View activePanel="modals">
+        <Panel id="modals">
+          <PanelHeader>Модальные окна</PanelHeader>
+          <Group>
+            <CellButton onClick={() => changeActiveModal(MODAL_PAGE_FILTERS)}>
+              Открыть модальную страницу
+            </CellButton>
+            <CellButton multiline onClick={() => changeActiveModal(MODAL_PAGE_FULLSCREEN)}>
+              Открыть полноэкранную модальную страницу
+            </CellButton>
+            <CellButton multiline onClick={() => changeActiveModal(MODAL_PAGE_WITH_FIXED_HEIGHT)}>
+              Открыть модальную страницу c фиксированной высотой
+            </CellButton>
+            <CellButton multiline onClick={() => changeActiveModal(MODAL_PAGE_DYNAMIC)}>
+              Открыть модальную страницу с динамической высотой
+            </CellButton>
+            <CellButton onClick={() => changeActiveModal(MODAL_CARD_MONEY_SEND)}>
+              Открыть модальные карточки
+            </CellButton>
+          </Group>
+        </Panel>
+      </View>
+    </React.Fragment>
   );
 };
 
@@ -597,13 +596,12 @@ const App = () => {
   );
 
   return (
-    <SplitLayout modal={modal}>
-      <SplitCol>
-        <View activePanel="main">
-          <Panel id="main">...</Panel>
-        </View>
-      </SplitCol>
-    </SplitLayout>
+    <React.Fragment>
+      <View activePanel="main">
+        <Panel id="main">...</Panel>
+      </View>
+      {modal}
+    </React.Fragment>
   );
 };
 ```
@@ -735,20 +733,17 @@ const Example = () => {
   );
 
   return (
-    <SplitLayout modal={modal}>
-      <SplitCol>
-        <View activePanel="main">
-          <Panel id="main">
-            <CellButton multiline onClick={() => setActiveModal('modal-1')}>
-              Пример с onOpened() на ModalRoot
-            </CellButton>
-            <CellButton multiline onClick={() => setActiveModal('modal-2')}>
-              Пример с onOpened() на ModalPage
-            </CellButton>
-          </Panel>
-        </View>
-      </SplitCol>
-    </SplitLayout>
+    <View activePanel="main">
+      <Panel id="main">
+        <CellButton multiline onClick={() => setActiveModal('modal-1')}>
+          Пример с onOpened() на ModalRoot
+        </CellButton>
+        <CellButton multiline onClick={() => setActiveModal('modal-2')}>
+          Пример с onOpened() на ModalPage
+        </CellButton>
+        {modal}
+      </Panel>
+    </View>
   );
 };
 
