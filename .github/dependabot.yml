@@ -15,6 +15,8 @@ updates:
       # Для разработки v6 фиксируем 18 версию.
       - dependency-name: '@types/react*'
         update-types: ['version-update:semver-major']
+      # [eslint-plugin-react-compiler]
+      #
       # Игнорируем https://www.npmjs.com/package/eslint-plugin-react-compiler/v/0.0.0 (это самый первый релиз),
       # чтобы использовать только экспериментальные версии и версии выше.
       - dependency-name: 'eslint-plugin-react-compiler'
@@ -54,6 +56,11 @@ updates:
           - 'eslint*'
           - '@typescript-eslint/*'
           - '@vkontakte/eslint-plugin'
+        exclude-patterns:
+          # [eslint-plugin-react-compiler]
+          #
+          # Экспериментальные версии пока не проходят в CI, но при этом стопорят обновление других зависимостей из группы eslint
+          - 'eslint-plugin-react-compiler'
       stylelint:
         patterns:
           - 'stylelint*'
