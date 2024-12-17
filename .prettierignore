@@ -32,3 +32,5 @@ packages/vkui-floating-ui/**/package.json
 
 # Yarn
 .yarn/*
+
+.next

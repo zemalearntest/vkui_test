@@ -5,3 +5,5 @@ coverage/
 !packages/vkui
 tmp/
 storybook-static/
+packages/my-app/styles
+.next
