@@ -19,15 +19,15 @@
 }
 
 .panelOverlay {
-  display: none;
   position: absolute;
-  inline-size: 100%;
-  block-size: 100%;
-  inset-inline-start: 0;
-  inset-block-start: 0;
-  background-color: #000;
-  pointer-events: none;
   z-index: var(--vkui_internal--z_index_panel_header_fade);
+  display: none;
+  background-color: #000;
+  block-size: 100%;
+  inline-size: 100%;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  pointer-events: none;
 }
 
 .panelPrev .panelOverlay {
@@ -74,9 +74,9 @@
 
 .panel {
   position: relative;
-  inline-size: 100%;
-  block-size: 100%;
   box-sizing: border-box;
+  block-size: 100%;
+  inline-size: 100%;
   isolation: isolate;
 }
 
@@ -90,9 +90,9 @@
 .animated .panel,
 .swipingBack .panel {
   position: fixed;
+  overflow: hidden;
   inset-block-start: 0;
   inset-inline-start: 0;
-  overflow: hidden;
 }
 
 /**
@@ -154,15 +154,15 @@
   }
 
   .ios .panelNext ~ .panelPrev {
-    animation-name: animation-view-prev-back;
     animation-duration: 0.3s;
     animation-fill-mode: forwards;
+    animation-name: animation-view-prev-back;
   }
 
   .ios .panelPrev ~ .panelNext {
-    animation-name: animation-view-next-forward;
     animation-duration: 0.3s;
     animation-fill-mode: none;
+    animation-name: animation-view-next-forward;
   }
 }
 

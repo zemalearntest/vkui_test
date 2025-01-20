@@ -1,15 +1,15 @@
 .host {
   --vkui_internal--alert_animation_scale_initial: 0.95;
 
-  user-select: none;
-  color: var(--vkui--color_text_primary);
   position: relative;
-  min-inline-size: 280px;
-  max-inline-size: 416px;
+  border-radius: var(--vkui--size_border_radius_paper--regular);
+  box-shadow: var(--vkui--elevation4);
+  color: var(--vkui--color_text_primary);
   margin-block: auto;
   margin-inline: 24px;
-  box-shadow: var(--vkui--elevation4);
-  border-radius: var(--vkui--size_border_radius_paper--regular);
+  max-inline-size: 416px;
+  min-inline-size: 280px;
+  user-select: none;
 }
 
 .desktop {
@@ -22,20 +22,20 @@
 }
 
 .closing {
-  opacity: 0;
   /* prettier-ignore */
   animation: animation-alert-scale-down var(--vkui--animation_duration_m) var(--vkui--animation_easing_platform);
+  opacity: 0;
 }
 
 .host::before {
   position: absolute;
-  inset-inline-start: 0;
-  inset-block-start: 0;
-  inline-size: 100%;
-  block-size: 100%;
-  background-color: var(--vkui--color_background_modal);
-  content: '';
   border-radius: inherit;
+  background-color: var(--vkui--color_background_modal);
+  block-size: 100%;
+  content: '';
+  inline-size: 100%;
+  inset-block-start: 0;
+  inset-inline-start: 0;
 }
 
 .content {
@@ -49,14 +49,14 @@
 }
 
 .action {
-  white-space: nowrap;
   background: transparent;
+  white-space: nowrap;
 }
 
 .actions {
+  position: relative;
   display: flex;
   max-inline-size: 100%;
-  position: relative;
   padding-block: 0 12px;
   padding-inline: 12px;
 }
@@ -89,18 +89,18 @@
 }
 
 .actionsAlignLeft {
-  justify-content: flex-start;
   align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .actionsAlignCenter {
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .actionsAlignRight {
-  justify-content: flex-end;
   align-items: flex-end;
+  justify-content: flex-end;
 }
 
 /**
@@ -109,10 +109,10 @@
 .ios {
   --vkui_internal--alert_animation_scale_initial: 1.05;
 
-  inline-size: 270px;
-  min-inline-size: 270px;
   overflow: hidden;
   box-shadow: none;
+  inline-size: 270px;
+  min-inline-size: 270px;
 }
 
 .ios.closing {
@@ -134,12 +134,12 @@
 }
 
 .ios .content::after {
-  content: '';
   position: absolute;
-  inset-block-end: 0;
-  block-size: 1px;
-  inset-inline: 0;
   background: var(--vkui--color_separator_primary_alpha);
+  block-size: 1px;
+  content: '';
+  inset-block-end: 0;
+  inset-inline: 0;
   transform-origin: center bottom;
 }
 
@@ -153,35 +153,35 @@
 }
 
 .ios .action {
-  font-family: var(--vkui--font_family_base);
   position: relative;
-  font-size: 17px;
-  line-height: 44px;
-  color: var(--vkui--color_text_accent);
+  display: block;
+  overflow: hidden;
   border: 0;
-  padding-block: 0;
-  padding-inline: 6px;
+  border-radius: 0;
   margin: 0;
   block-size: 44px;
-  display: block;
+  color: var(--vkui--color_text_accent);
+  font-family: var(--vkui--font_family_base);
+  font-size: 17px;
+  line-height: 44px;
+  padding-block: 0;
+  padding-inline: 6px;
   text-align: center;
   text-decoration: none;
-  overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 0;
 }
 
 .ios .action::after {
-  content: '';
   position: absolute;
   background: var(--vkui--color_separator_primary_alpha);
+  content: '';
 }
 
 .ios .actionsDirectionHorizontal .action::after {
+  block-size: 100%;
+  inline-size: 1px;
   inset-block-start: 0;
   inset-inline-end: 0;
-  inline-size: 1px;
-  block-size: 100%;
   transform-origin: right center;
 }
 
@@ -190,9 +190,9 @@
 }
 
 .ios .actionsDirectionHorizontal .action {
+  flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 1;
-  flex-basis: 0;
 }
 
 .ios .actionsDirectionHorizontal .action:first-child {
@@ -204,10 +204,10 @@
 }
 
 .ios .actionsDirectionVertical .action::after {
-  inset-inline-start: 0;
-  inset-block-end: 0;
-  inline-size: 100%;
   block-size: 1px;
+  inline-size: 100%;
+  inset-block-end: 0;
+  inset-inline-start: 0;
   transform-origin: center bottom;
 }
 
@@ -216,10 +216,10 @@
 }
 
 .ios .actionsDirectionVertical .action:last-child {
-  border-start-start-radius: 0;
-  border-start-end-radius: 0;
   border-end-end-radius: 12px;
   border-end-start-radius: 12px;
+  border-start-end-radius: 0;
+  border-start-start-radius: 0;
 }
 
 @media (min-resolution: 2dppx) {

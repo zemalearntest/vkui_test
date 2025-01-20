@@ -1,21 +1,21 @@
 .host {
-  appearance: none;
-  background: none;
-  border: 0;
-  box-shadow: none;
-  display: block;
-  color: currentColor;
-  padding: 0;
-  margin: 0;
   position: relative;
-  block-size: 48px;
-  inline-size: fit-content;
+  display: block;
+  padding: 0;
+  border: 0;
 
   /**
    * Чтобы закргуление было равно половине высоты.
    * см. https://stackoverflow.com/questions/27233295/possible-to-make-border-radius-equal-to-half-the-total-height-without-javascript
    */
   border-radius: 9999px;
+  margin: 0;
+  appearance: none;
+  background: none;
+  block-size: 48px;
+  box-shadow: none;
+  color: currentColor;
+  inline-size: fit-content;
 }
 
 .sizeYCompact {
@@ -104,12 +104,12 @@
 /* stylelint-disable-next-line selector-pseudo-class-disallowed-list */
 :global(.vkuiInternalFormField__after) .host {
   display: flex;
-  align-items: center;
   align-content: center;
+  align-items: center;
   justify-content: center;
-  inline-size: var(--vkui--size_field_height--regular);
-  block-size: var(--vkui--size_field_height--regular);
   border-radius: var(--vkui--size_border_radius--regular);
+  block-size: var(--vkui--size_field_height--regular);
+  inline-size: var(--vkui--size_field_height--regular);
 }
 
 /* stylelint-disable selector-pseudo-class-disallowed-list */
@@ -122,8 +122,8 @@
 
 /* stylelint-disable-next-line selector-pseudo-class-disallowed-list */
 :global(.vkuiInternalFormField__after) .sizeYCompact {
-  inline-size: var(--vkui--size_field_height--compact);
   block-size: var(--vkui--size_field_height--compact);
+  inline-size: var(--vkui--size_field_height--compact);
 }
 
 /* stylelint-disable selector-pseudo-class-disallowed-list */
@@ -138,8 +138,8 @@
 @media (--sizeY-compact) {
   /* stylelint-disable-next-line selector-pseudo-class-disallowed-list */
   :global(.vkuiInternalFormField__after) .sizeYNone {
-    inline-size: var(--vkui--size_field_height--compact);
     block-size: var(--vkui--size_field_height--compact);
+    inline-size: var(--vkui--size_field_height--compact);
   }
 
   /* stylelint-disable selector-pseudo-class-disallowed-list */
@@ -172,6 +172,6 @@
  */
 /* stylelint-disable-next-line selector-pseudo-class-disallowed-list */
 :global(.vkuiInternalAlert__dismiss).host {
-  block-size: 36px;
   padding: 8px;
+  block-size: 36px;
 }

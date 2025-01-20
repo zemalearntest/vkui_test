@@ -1,12 +1,12 @@
 .host {
-  line-height: initial;
-  block-size: 100%;
-  max-inline-size: 100%;
-  box-sizing: border-box;
   display: flex;
+  box-sizing: border-box;
   align-items: center;
   justify-content: flex-start;
+  block-size: 100%;
   font-family: var(--vkui--font_family_base);
+  line-height: initial;
+  max-inline-size: 100%;
 }
 
 .before {
@@ -15,34 +15,34 @@
 }
 
 .in {
-  flex-grow: 1;
-  min-inline-size: 0;
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
   align-items: flex-start;
   justify-content: center;
   block-size: 100%;
+  min-inline-size: 0;
 }
 
 .subtitle,
 .childrenIn,
 .childrenText {
   overflow: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .subtitle {
   order: 1;
+  color: var(--vkui--color_text_secondary);
   margin-block-start: 1px;
   max-inline-size: 100%;
-  color: var(--vkui--color_text_secondary);
 }
 
 .children {
-  max-inline-size: 100%;
   display: flex;
   align-items: center;
+  max-inline-size: 100%;
 }
 
 .childrenIn {
@@ -54,8 +54,8 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  margin-inline-start: 2px;
   color: var(--vkui--color_icon_accent);
+  margin-inline-start: 2px;
 }
 
 .width {
@@ -71,8 +71,8 @@
  */
 
 .ios .childrenIn {
-  font-size: 21px;
   font-family: var(--vkui--font_family_accent);
+  font-size: 21px;
   font-weight: 500;
   line-height: var(--vkui_internal--panel_header_height);
 }
@@ -82,8 +82,8 @@
  */
 
 .android .childrenIn {
-  font-size: 23px;
   font-family: var(--vkui--font_family_accent);
+  font-size: 23px;
   font-weight: 500;
   line-height: var(--vkui_internal--panel_header_height);
 }

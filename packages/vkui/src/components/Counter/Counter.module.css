@@ -1,12 +1,12 @@
 .host {
   display: flex;
+  box-sizing: border-box;
   align-items: center;
   justify-content: center;
-  padding-inline: 5px;
-  text-align: center;
-  box-sizing: border-box;
   background: var(--vkui_internal--counter_background);
   color: var(--vkui_internal--counter_foreground);
+  padding-inline: 5px;
+  text-align: center;
 
   --vkui_internal--counter_background: transparent;
   --vkui_internal--counter_foreground: var(--vkui--color_text_contrast);
@@ -93,15 +93,15 @@
 /*----------------------------------*/
 
 .sizeM {
+  border-radius: 12px;
   block-size: 24px;
   min-inline-size: 24px;
-  border-radius: 12px;
 }
 
 .sizeS {
+  border-radius: 9px;
   block-size: 18px;
   min-inline-size: 18px;
-  border-radius: 9px;
 }
 
 .modeInherit {

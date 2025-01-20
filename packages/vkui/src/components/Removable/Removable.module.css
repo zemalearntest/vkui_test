@@ -43,62 +43,62 @@
 
 .remove {
   position: absolute;
-  inset-inline-start: 100%;
-  inset-block-start: 0;
-  block-size: 100%;
-  padding-block: 0;
-  padding-inline: 10px;
-  font-size: 15px;
-  line-height: 45px;
-  color: var(--vkui_internal--white);
-  background-color: var(--vkui--color_background_negative);
   border: 0;
   border-radius: 0;
+  background-color: var(--vkui--color_background_negative);
+  block-size: 100%;
+  color: var(--vkui_internal--white);
+  font-size: 15px;
+  inset-block-start: 0;
+  inset-inline-start: 100%;
+  line-height: 45px;
+  padding-block: 0;
+  padding-inline: 10px;
 }
 
 .removeIn {
   display: flex;
   align-items: center;
   justify-content: center;
-  inline-size: 100%;
   block-size: 100%;
+  inline-size: 100%;
 }
 
 .toggle {
   display: block;
-  inline-size: 44px;
+  background: none;
   block-size: 44px;
+  inline-size: 44px;
   margin-block: 0;
   margin-inline: 2px;
-  background: none;
 }
 
 .toggleIn {
   position: relative;
   display: flex;
-  align-items: center;
   align-content: center;
+  align-items: center;
   justify-content: center;
-  inline-size: 100%;
-  block-size: 100%;
   border: 0;
+  block-size: 100%;
+  inline-size: 100%;
 }
 
 .toggleIn::after {
+  border-radius: 50%;
+  background-color: var(--vkui--color_background_negative);
+  block-size: 22px;
   content: '';
   inline-size: 22px;
-  block-size: 22px;
-  background-color: var(--vkui--color_background_negative);
-  border-radius: 50%;
 }
 
 .toggleIn::before {
-  content: '';
   position: absolute;
   display: block;
-  inline-size: 12px;
-  block-size: 2px;
   background-color: var(--vkui_internal--white);
+  block-size: 2px;
+  content: '';
+  inline-size: 12px;
 }
 
 .ios .content {
@@ -107,8 +107,8 @@
 }
 
 .indent .action {
-  visibility: hidden;
   pointer-events: none;
+  visibility: hidden;
 }
 
 /**
@@ -132,10 +132,10 @@
 :global(.vkuiInternalFormItem--withTop) :global(.vkuiInternalFormItem__removable) ~ .offset,
 /* stylelint-disable-next-line selector-pseudo-class-disallowed-list */
 :global(.vkuiInternalFormLayoutGroup--removable) :global(.vkuiInternalFormItem--withTop) ~ .offset {
-  order: -1;
   display: block;
-  inline-size: 100%;
+  order: -1;
   block-size: calc(2px + var(--vkui--font_subhead--line_height--regular) + 8px);
+  inline-size: 100%;
 }
 
 /* stylelint-disable selector-pseudo-class-disallowed-list */

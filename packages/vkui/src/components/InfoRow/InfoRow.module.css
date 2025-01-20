@@ -1,14 +1,14 @@
 .host {
-  user-select: text;
-  text-overflow: ellipsis;
   overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: text;
 }
 
 .header {
   display: block;
-  margin-block-end: 2px;
-  color: var(--vkui--color_text_subhead);
   overflow: hidden;
+  color: var(--vkui--color_text_subhead);
+  margin-block-end: 2px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }

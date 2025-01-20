@@ -1,7 +1,7 @@
 .root {
   display: flex;
-  flex-direction: column;
   overflow: hidden;
+  flex-direction: column;
 }
 
 .heading {
@@ -21,11 +21,11 @@
 }
 
 .content {
-  padding-block: var(--vkui--size_base_padding_vertical--regular);
-  padding-inline: var(--vkui--size_base_padding_horizontal--regular);
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  padding-block: var(--vkui--size_base_padding_vertical--regular);
+  padding-inline: var(--vkui--size_base_padding_horizontal--regular);
 
   --vkui--color_text_link: var(--vkui--color_text_primary);
 }

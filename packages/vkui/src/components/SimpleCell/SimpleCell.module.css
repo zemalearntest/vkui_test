@@ -3,11 +3,11 @@
 
   display: flex;
   align-items: center;
-  min-block-size: 48px;
-  white-space: nowrap;
-  text-decoration: none;
   color: var(--vkui--color_text_primary);
+  min-block-size: 48px;
   padding-inline: var(--vkui--size_base_padding_horizontal--regular);
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .mult {
@@ -25,9 +25,9 @@
 .before {
   display: flex;
   align-items: center;
+  color: var(--vkui_internal--icon_color, var(--vkui--color_icon_accent));
   padding-block: var(--vkui--spacing_size_s);
   padding-inline-end: var(--vkui_internal--SimpleCell-before-inline-padding-end);
-  color: var(--vkui_internal--icon_color, var(--vkui--color_icon_accent));
 }
 
 /* stylelint-disable-next-line selector-pseudo-class-disallowed-list */
@@ -46,13 +46,13 @@
 
 .middle {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-block: var(--vkui--spacing_size_l);
-  max-inline-size: 100%;
-  flex-grow: 1;
-  min-inline-size: 0;
   overflow: hidden;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  max-inline-size: 100%;
+  min-inline-size: 0;
+  padding-block: var(--vkui--spacing_size_l);
 }
 
 /* stylelint-disable-next-line selector-max-universal -- gap: 2px */
@@ -65,8 +65,8 @@
 }
 
 .text {
-  text-overflow: ellipsis;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .subtitle,
@@ -78,15 +78,15 @@
   display: flex;
   align-content: flex-start;
   align-items: center;
-  max-inline-size: 100%;
   justify-content: flex-start;
+  max-inline-size: 100%;
 }
 
 .children {
+  display: block;
+  overflow: hidden;
   color: inherit;
   text-overflow: ellipsis;
-  overflow: hidden;
-  display: block;
 }
 
 .mult .children,
@@ -107,18 +107,18 @@
 }
 
 .indicator {
+  overflow: hidden;
   flex-shrink: 0;
   color: var(--vkui--color_text_secondary);
   min-inline-size: 0;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
   padding-inline-start: var(--vkui--spacing_size_xl);
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .after {
-  flex-shrink: 0;
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   color: var(--vkui_internal--icon_color, var(--vkui--color_icon_accent));
 }

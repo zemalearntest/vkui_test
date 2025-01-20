@@ -8,8 +8,8 @@
 }
 
 .marginAuto {
-  margin-inline: var(--vkui--size_base_padding_horizontal--regular);
   margin-block: var(--vkui--size_base_padding_vertical--regular);
+  margin-inline: var(--vkui--size_base_padding_horizontal--regular);
 }
 
 .marginAutoInline {

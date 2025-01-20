@@ -1,24 +1,24 @@
 .host {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--vkui--color_tabbar_text_inactive);
-  text-decoration: none;
-  border: 0;
-  outline: var(--vkui_internal--outline-reset);
   padding: 0;
+  border: 0;
   background: transparent;
   block-size: var(--vkui_internal--tabbar_height);
-  position: relative;
+  color: var(--vkui--color_tabbar_text_inactive);
+  outline: var(--vkui_internal--outline-reset);
+  text-decoration: none;
 }
 
 /* stylelint-disable-next-line selector-pseudo-class-disallowed-list */
 :global(.vkuiInternalTabbar) .host {
+  flex-basis: 0;
+  flex-grow: 1;
   flex-shrink: 0;
   max-inline-size: 100%;
   min-inline-size: 0;
-  flex-grow: 1;
-  flex-basis: 0;
 }
 
 .selected {
@@ -31,15 +31,15 @@
 
 .in {
   display: flex;
-  padding-block: 4px 2px;
-  padding-inline: 2px;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-  block-size: 100%;
-  inline-size: 100%;
   overflow: hidden;
   box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  block-size: 100%;
+  inline-size: 100%;
+  padding-block: 4px 2px;
+  padding-inline: 2px;
+  pointer-events: none;
 }
 
 /* stylelint-disable-next-line selector-pseudo-class-disallowed-list */
@@ -53,8 +53,8 @@
 }
 
 .icon {
-  color: var(--vkui--color_icon_secondary);
   position: relative;
+  color: var(--vkui--color_icon_secondary);
 }
 
 .selected .icon {
@@ -62,10 +62,10 @@
 }
 
 .label {
-  white-space: nowrap;
-  max-inline-size: 100%;
   overflow: hidden;
+  max-inline-size: 100%;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 /* stylelint-disable-next-line selector-pseudo-class-disallowed-list */
@@ -86,19 +86,19 @@
  */
 
 .android .tappable {
+  border-radius: 50%;
   inline-size: calc(100% + 16px);
   padding-block-end: calc(100% + 16px);
-  border-radius: 50%;
 }
 
 .android:first-child {
-  border-start-start-radius: 0;
   border-end-start-radius: 0;
+  border-start-start-radius: 0;
 }
 
 .android:last-child {
-  border-start-end-radius: 0;
   border-end-end-radius: 0;
+  border-start-end-radius: 0;
 }
 
 /**
@@ -106,8 +106,8 @@
  */
 
 .ios .tappable {
-  inline-size: 100%;
   block-size: 100%;
+  inline-size: 100%;
   inset-block-start: 0;
   inset-inline-start: 0;
 }

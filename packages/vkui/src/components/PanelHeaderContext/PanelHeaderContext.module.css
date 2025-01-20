@@ -2,8 +2,8 @@
   --vkui_internal--PanelHeaderContext__fade_display: none;
 
   z-index: var(--vkui_internal--z_index_panel_header_context);
-  inline-size: 100%;
   block-size: auto;
+  inline-size: 100%;
 }
 
 .sizeXCompact {
@@ -23,21 +23,21 @@
 .in {
   position: absolute;
   z-index: 1;
-  inset-inline-start: 0;
-  inline-size: 100%;
-  padding: 8px;
   box-sizing: border-box;
+  padding: 8px;
+  inline-size: 100%;
+  inset-inline-start: 0;
 }
 
 .fade {
-  display: var(--vkui_internal--PanelHeaderContext__fade_display);
   position: absolute;
   z-index: 0;
-  inline-size: 100%;
-  block-size: 100%;
-  inset-inline-start: 0;
-  inset-block-start: 0;
+  display: var(--vkui_internal--PanelHeaderContext__fade_display);
   background: rgba(0, 0, 0, 0.4);
+  block-size: 100%;
+  inline-size: 100%;
+  inset-block-start: 0;
+  inset-inline-start: 0;
 }
 
 .opened .fade {

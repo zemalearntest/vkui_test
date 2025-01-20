@@ -1,12 +1,12 @@
 .host {
-  isolation: isolate;
   position: relative;
   display: inline-grid;
-  grid-auto-flow: column;
+  box-sizing: border-box;
   align-items: center;
   justify-content: center;
-  box-sizing: border-box;
   block-size: auto;
+  grid-auto-flow: column;
+  isolation: isolate;
 
   /**
    * `min-width` в контексте Flexbox по умолчанию имеет значение `auto`,
@@ -18,36 +18,36 @@
 }
 
 .sizeS {
+  border-radius: 4px;
   min-block-size: 16px;
   padding-block: 1px;
   padding-inline: 4px;
-  border-radius: 4px;
 }
 
 .sizeM {
+  border-radius: 6px;
   column-gap: 4px;
   min-block-size: 20px;
   padding-block: 3px;
   padding-inline: 6px;
-  border-radius: 6px;
 }
 
 .singleIconSlotSizeM {
-  padding-block: 1px;
   margin-inline: -2px;
+  padding-block: 1px;
 }
 
 .sizeL {
+  border-radius: 8px;
   column-gap: 6px;
   min-block-size: 28px;
   padding-block: 6px;
   padding-inline: 8px;
-  border-radius: 8px;
 }
 
 .iconSlotSizeL {
-  margin-inline-start: -2px;
   margin-inline-end: -2px;
+  margin-inline-start: -2px;
 }
 
 .singleIconSlotSizeL {
@@ -61,65 +61,65 @@
 
 /* mode="primary" */
 .primaryAccent {
-  color: var(--vkui--color_text_contrast);
   background-color: var(--vkui--color_background_accent);
+  color: var(--vkui--color_text_contrast);
 }
 
 .primaryNeutral {
-  color: var(--vkui--color_text_primary);
   background-color: var(--vkui--color_background_secondary);
+  color: var(--vkui--color_text_primary);
 }
 
 .primaryAccentGreen {
-  color: var(--vkui--color_text_contrast);
   background-color: var(--vkui--color_accent_green);
+  color: var(--vkui--color_text_contrast);
 }
 
 .primaryAccentRed {
-  color: var(--vkui--color_text_contrast);
   background-color: var(--vkui--color_accent_red);
+  color: var(--vkui--color_text_contrast);
 }
 
 .primaryOverlay {
-  color: var(--vkui--color_text_contrast);
   background-color: var(--vkui--color_overlay_primary);
+  color: var(--vkui--color_text_contrast);
 }
 
 /* mode="secondary" */
 .secondaryAccent {
-  color: var(--vkui--color_text_accent);
   background-color: var(--vkui--color_background_secondary_alpha);
+  color: var(--vkui--color_text_accent);
 }
 
 .secondaryNeutral {
-  color: var(--vkui--color_text_subhead);
   background-color: var(--vkui--color_background_secondary);
+  color: var(--vkui--color_text_subhead);
 }
 
 .secondaryAccentGreen {
-  color: var(--vkui--color_accent_green);
   background-color: var(--vkui--color_background_positive_tint);
+  color: var(--vkui--color_accent_green);
 }
 
 .secondaryAccentRed {
-  color: var(--vkui--color_accent_red);
   background-color: var(--vkui--color_background_negative_tint);
+  color: var(--vkui--color_accent_red);
 }
 
 .secondaryOverlay {
-  color: var(--vkui--color_text_contrast);
   background-color: var(--vkui--color_overlay_secondary);
+  color: var(--vkui--color_text_contrast);
 }
 
 /* mode="outline" */
 .modeOutline::before {
-  content: '';
   position: absolute;
   z-index: -1;
-  inset: 0;
   border-width: 1px;
   border-style: solid;
   border-radius: inherit;
+  content: '';
+  inset: 0;
 }
 
 .outlineAccent {

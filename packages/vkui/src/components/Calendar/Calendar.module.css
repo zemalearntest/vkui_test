@@ -1,13 +1,13 @@
 .host {
   display: flex;
-  flex-direction: column;
-  background: var(--vkui--color_background_contrast_themed);
-  border: 0.5px solid var(--vkui--color_separator_primary);
   box-sizing: border-box;
-  box-shadow: var(--vkui--elevation1);
-  border-radius: 8px;
-  inline-size: 305px;
+  flex-direction: column;
   padding: 12px;
+  border: 0.5px solid var(--vkui--color_separator_primary);
+  border-radius: 8px;
+  background: var(--vkui--color_background_contrast_themed);
+  box-shadow: var(--vkui--elevation1);
+  inline-size: 305px;
 }
 
 .time {
@@ -23,8 +23,8 @@
 }
 
 .sizeS {
-  inline-size: 220px;
   padding: 8px;
+  inline-size: 220px;
 }
 
 .sizeS .header {

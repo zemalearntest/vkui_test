@@ -1,8 +1,8 @@
 .paragraph {
-  font-size: var(--vkui--font_paragraph--font_size--regular);
-  line-height: var(--vkui--font_paragraph--line_height--regular);
-  font-weight: var(--vkui--font_weight_base3);
   font-family: var(--vkui--font_family_base);
+  font-size: var(--vkui--font_paragraph--font_size--regular);
+  font-weight: var(--vkui--font_weight_base3);
+  line-height: var(--vkui--font_paragraph--line_height--regular);
 }
 
 .paragraph:not(:first-child) {
@@ -25,11 +25,11 @@
 }
 
 .h1 {
-  font-size: 40px;
-  line-height: 46px;
-  font-weight: var(--vkui--font_weight_accent1);
-  font-family: var(--vkui--font_family_accent);
   color: var(--vkui--color_text_primary);
+  font-family: var(--vkui--font_family_accent);
+  font-size: 40px;
+  font-weight: var(--vkui--font_weight_accent1);
+  line-height: 46px;
 }
 
 .strong {
@@ -37,9 +37,9 @@
 }
 
 .hr {
-  margin-block: 40px;
-  background-color: var(--vkui_docs--color_stroke_separator_secondary);
-  color: var(--vkui_docs--color_stroke_separator_secondary);
   border-width: 0;
+  background-color: var(--vkui_docs--color_stroke_separator_secondary);
   block-size: 1px;
+  color: var(--vkui_docs--color_stroke_separator_secondary);
+  margin-block: 40px;
 }

@@ -1,7 +1,7 @@
 .host {
   position: relative;
-  cursor: pointer;
   block-size: var(--vkui_internal--slider_thumb_size);
+  cursor: pointer;
 
   --vkui_internal--Slider_start_value: 0;
   --vkui_internal--Slider_end_value: 0;
@@ -15,15 +15,15 @@
 .track,
 .trackFill {
   position: absolute;
+  border-radius: 1px;
+  block-size: 2px;
   inset-block-start: 50%;
   inset-inline-start: 0;
-  block-size: 2px;
-  border-radius: 1px;
 }
 
 .track {
-  inline-size: 100%;
   background-color: var(--vkui--color_track_background);
+  inline-size: 100%;
 }
 
 .trackFill {
@@ -33,15 +33,15 @@
 
 .multiple .trackFill {
   inline-size: auto;
-  inset-inline-start: calc(var(--vkui_internal--Slider_start_value) * 1%);
   inset-inline-end: calc((100 - var(--vkui_internal--Slider_end_value)) * 1%);
+  inset-inline-start: calc(var(--vkui_internal--Slider_start_value) * 1%);
 }
 
 .thumbs {
-  isolation: isolate;
   position: relative;
-  margin-inline: calc(var(--vkui_internal--slider_thumb_size) / 2);
   block-size: 100%;
+  isolation: isolate;
+  margin-inline: calc(var(--vkui_internal--slider_thumb_size) / 2);
 }
 
 .thumb {

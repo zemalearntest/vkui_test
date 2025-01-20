@@ -14,15 +14,15 @@
 .body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   padding-block: 4px;
   padding-inline: var(--vkui--spacing_size_s);
 }
 
 .sizeS .body {
-  min-inline-size: 64px;
   padding: var(--vkui--spacing_size_xs);
+  min-inline-size: 64px;
 }
 
 .sizeM .body {
@@ -40,6 +40,6 @@
 }
 
 .text {
-  padding-block-start: 8px;
   color: var(--vkui--color_text_secondary);
+  padding-block-start: 8px;
 }

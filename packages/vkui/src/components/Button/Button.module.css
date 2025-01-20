@@ -2,12 +2,12 @@
   position: relative;
   display: inline-block;
   box-sizing: border-box;
-  border: 0;
-  min-block-size: var(--vkui--size_button_small_height--compact);
-  margin: 0;
   padding: 0;
+  border: 0;
   border-radius: var(--vkui--size_border_radius--regular);
+  margin: 0;
   max-inline-size: 100%;
+  min-block-size: var(--vkui--size_button_small_height--compact);
   min-inline-size: var(--vkui--size_button_minimum_width--regular);
   transition:
     background-color 0.15s ease-out,
@@ -40,19 +40,19 @@
 
 .stretched {
   display: block;
-  inline-size: 100%;
-  flex-grow: 1;
   flex-basis: 0;
+  flex-grow: 1;
+  inline-size: 100%;
 }
 
 .in {
   display: flex;
+  box-sizing: border-box;
   align-items: center;
   justify-content: center;
   inline-size: 100%;
   min-block-size: inherit;
   text-align: center;
-  box-sizing: border-box;
 }
 
 .alignLeft .in {
@@ -77,10 +77,10 @@
 }
 
 .content {
-  white-space: nowrap;
-  text-overflow: ellipsis;
   overflow: hidden;
   font-weight: var(--vkui--font_weight_accent2);
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .sizeS .content:first-child {

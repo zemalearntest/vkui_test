@@ -4,13 +4,13 @@
 }
 
 .mask::after {
-  content: '';
   position: absolute;
-  inline-size: calc(100% - 0.1em);
   block-size: 1px;
+  border-block-end: solid 1px var(--vkui--color_text_secondary);
+  content: '';
+  inline-size: calc(100% - 0.1em);
   inset-block-end: 0;
   inset-inline-start: 0;
-  border-block-end: solid 1px var(--vkui--color_text_secondary);
 }
 
 .mask:last-child {

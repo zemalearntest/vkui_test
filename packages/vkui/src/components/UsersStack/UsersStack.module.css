@@ -46,13 +46,13 @@
 
 .counter {
   display: flex;
+  box-sizing: border-box;
   align-items: center;
   justify-content: center;
-  box-sizing: border-box;
-  padding-inline: var(--vkui--spacing_size_xs);
-  color: var(--vkui--color_text_contrast_themed);
-  background: var(--vkui--color_icon_secondary);
   border-radius: calc(var(--vkui_internal--UsersStack_item_size) / 2);
+  background: var(--vkui--color_icon_secondary);
+  color: var(--vkui--color_text_contrast_themed);
+  padding-inline: var(--vkui--spacing_size_xs);
 }
 
 .photoWrapper {
@@ -64,13 +64,13 @@
 }
 
 .text {
-  min-inline-size: 0;
   flex: 1;
+  min-inline-size: 0;
 }
 
 .avatarsPositionBlockStart .text {
-  text-align: center;
   margin-block-start: 8px;
+  text-align: center;
 }
 
 .avatarsPositionInlineStart .text {

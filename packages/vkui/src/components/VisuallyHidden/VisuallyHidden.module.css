@@ -1,28 +1,28 @@
 /* stylelint-disable declaration-no-important */
 .host {
   position: absolute !important;
-  block-size: 1px !important;
-  inline-size: 1px !important;
+  overflow: hidden !important;
   padding: 0 !important;
+  border: 0 !important;
   margin: -1px !important; /* Fix for https://github.com/twbs/bootstrap/issues/25686 */
-  white-space: nowrap !important;
+  block-size: 1px !important;
   clip: rect(0, 0, 0, 0) !important;
   clip-path: inset(50%);
-  overflow: hidden !important;
-  border: 0 !important;
+  inline-size: 1px !important;
   opacity: 0;
   user-select: none;
+  white-space: nowrap !important;
 }
 
 /* Чтобы фокус скринридера, попавший на скрытый инпут был виден.
  * Особенно актуально для Android TalkBack */
 .focusableInput {
-  inset-inline-start: 0;
-  inset-block-start: 0;
   block-size: 100% !important;
-  inline-size: 100% !important;
   clip: auto !important;
   clip-path: none !important;
+  inline-size: 100% !important;
+  inset-block-start: 0;
+  inset-inline-start: 0;
   pointer-events: none;
 }
 /* stylelint-enable declaration-no-important */

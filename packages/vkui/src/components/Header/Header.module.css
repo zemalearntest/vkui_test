@@ -2,8 +2,8 @@
   display: flex;
   align-items: flex-start;
   padding: 0;
-  padding-inline: var(--vkui--size_base_padding_horizontal--regular);
   font-family: var(--vkui--font_family_base);
+  padding-inline: var(--vkui--size_base_padding_horizontal--regular);
 }
 
 .before,
@@ -17,8 +17,8 @@
 
 .before {
   align-self: center;
-  margin-inline-end: var(--vkui--spacing_size_m);
   margin-block-start: var(--vkui--spacing_size_2xs);
+  margin-inline-end: var(--vkui--spacing_size_m);
 }
 
 .beforeWithSubtitle {
@@ -48,8 +48,8 @@
 
 .main {
   flex: 1 0 0;
-  min-inline-size: 0;
   color: var(--vkui--color_text_primary);
+  min-inline-size: 0;
 }
 
 .content {
@@ -59,9 +59,9 @@
 
 .contentIn,
 .subtitle {
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
 }
 
 .contentMultiline {
@@ -79,9 +79,9 @@
 }
 
 .indicator {
+  flex-shrink: 0;
   color: var(--vkui--color_text_secondary);
   margin-inline-start: var(--vkui--spacing_size_xs);
-  flex-shrink: 0;
 }
 
 .host:not(.pi) .indicator {

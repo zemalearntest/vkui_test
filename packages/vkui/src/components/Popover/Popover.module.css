@@ -4,8 +4,8 @@
 
 /* Создаём "Safe Zone" */
 .host::before {
-  content: '';
   position: absolute;
+  content: '';
   inset: calc(-1 * var(--vkui_internal--popover_safe_zone_padding));
 }
 
@@ -14,8 +14,8 @@
 }
 
 .inWithStyling {
-  background-color: var(--vkui--color_background_contrast_themed);
   border-radius: var(--vkui--size_border_radius--regular);
+  background-color: var(--vkui--color_background_contrast_themed);
   box-shadow: var(--vkui--elevation3);
 }
 

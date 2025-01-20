@@ -1,6 +1,6 @@
 .host {
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
   max-block-size: 204px;
 }
 
@@ -8,10 +8,10 @@
   position: relative;
   z-index: var(--vkui_internal--z_index_form_field_element);
   display: block;
-  padding: 12px;
-  inline-size: 100%;
   box-sizing: border-box;
+  padding: 12px;
   color: var(--vkui--color_text_primary);
+  inline-size: 100%;
 }
 
 .el[cols] {

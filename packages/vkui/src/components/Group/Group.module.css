@@ -31,8 +31,8 @@
   --vkui_internal--Group_padding_block: var(--vkui_internal--Group_card_mode_padding_size);
 
   position: relative;
-  background: var(--vkui--color_background_content);
   border-radius: var(--vkui--size_border_radius_paper--regular);
+  background: var(--vkui--color_background_content);
 }
 
 @media (--sizeX-regular) {
@@ -41,8 +41,8 @@
     --vkui_internal--Group_padding_block: var(--vkui_internal--Group_card_mode_padding_size);
 
     position: relative;
-    background: var(--vkui--color_background_content);
     border-radius: var(--vkui--size_border_radius_paper--regular);
+    background: var(--vkui--color_background_content);
   }
 }
 
@@ -61,18 +61,18 @@
 }
 
 .sizeXCompact.modeCard:first-of-type {
-  border-start-start-radius: 0;
-  border-start-end-radius: 0;
   border-end-end-radius: var(--vkui--size_border_radius_promo--regular);
   border-end-start-radius: var(--vkui--size_border_radius_promo--regular);
+  border-start-end-radius: 0;
+  border-start-start-radius: 0;
 }
 
 @media (--sizeX-compact) {
   .sizeXNone.modeCard:first-of-type {
-    border-start-start-radius: 0;
-    border-start-end-radius: 0;
     border-end-end-radius: var(--vkui--size_border_radius_promo--regular);
     border-end-start-radius: var(--vkui--size_border_radius_promo--regular);
+    border-start-end-radius: 0;
+    border-start-start-radius: 0;
   }
 }
 
@@ -85,28 +85,28 @@
  */
 .modeCard::before,
 .sizeXRegular.modeNone::before {
-  content: '';
-  inset-inline-start: 0;
-  inset-block-start: 0;
-  inline-size: 100%;
-  block-size: 100%;
   position: absolute;
   border-radius: inherit;
-  pointer-events: none;
+  block-size: 100%;
   box-shadow: inset 0 0 0 var(--vkui--size_border--regular) var(--vkui--color_separator_primary);
+  content: '';
+  inline-size: 100%;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  pointer-events: none;
 }
 
 @media (--sizeX-regular) {
   .sizeXNone.modeNone::before {
-    content: '';
-    inset-inline-start: 0;
-    inset-block-start: 0;
-    inline-size: 100%;
-    block-size: 100%;
     position: absolute;
     border-radius: inherit;
-    pointer-events: none;
+    block-size: 100%;
     box-shadow: inset 0 0 0 var(--vkui--size_border--regular) var(--vkui--color_field_border_alpha);
+    content: '';
+    inline-size: 100%;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    pointer-events: none;
   }
 }
 
@@ -154,9 +154,9 @@
  */
 .description {
   display: block;
+  color: var(--vkui--color_text_secondary);
   padding-block: var(--vkui--spacing_size_xs) var(--vkui--spacing_size_2xl);
   padding-inline: var(--vkui--size_base_padding_horizontal--regular);
-  color: var(--vkui--color_text_secondary);
 }
 
 /*
@@ -173,9 +173,9 @@
 
 .separatorSibling::before {
   display: var(--vkui_internal--Group__separator_hr);
-  content: '';
-  block-size: var(--vkui--size_border--regular);
   background: var(--vkui--color_separator_primary);
+  block-size: var(--vkui--size_border--regular);
+  content: '';
   margin-block-end: calc(-1 * var(--vkui--size_border--regular));
 }
 
@@ -184,16 +184,16 @@
 .sizeXCompact.modeNone + .separatorSibling {
   --vkui_internal--Group__separator_hr: block;
 
-  padding-inline: var(--vkui--size_base_padding_horizontal--regular);
   padding-block: var(--vkui--spacing_size_m);
+  padding-inline: var(--vkui--size_base_padding_horizontal--regular);
 }
 
 @media (--sizeX-compact) {
   .sizeXNone.modeNone + .separatorSibling {
     --vkui_internal--Group__separator_hr: block;
 
-    padding-inline: var(--vkui--size_base_padding_horizontal--regular);
     padding-block: var(--vkui--spacing_size_m);
+    padding-inline: var(--vkui--size_base_padding_horizontal--regular);
   }
 }
 
@@ -301,7 +301,7 @@
 /* stylelint-disable-next-line selector-pseudo-class-disallowed-list */
 :global(.vkuiInternalPanelHeader--vkcom) + * .host:first-of-type {
   position: relative;
-  inset-block-start: -1px;
   border-start-end-radius: 0;
   border-start-start-radius: 0;
+  inset-block-start: -1px;
 }

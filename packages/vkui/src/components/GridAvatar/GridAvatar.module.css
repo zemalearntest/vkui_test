@@ -4,19 +4,19 @@
 
 .in {
   display: flex;
+  overflow: hidden;
   flex-flow: column wrap;
+  border-radius: inherit;
   block-size: 100%;
   inline-size: 100%;
-  overflow: hidden;
-  border-radius: inherit;
 }
 
 .item {
-  inline-size: calc(50% - var(--vkui_internal--grid_avatar_image_offset) / 2);
-  block-size: calc(50% - var(--vkui_internal--grid_avatar_image_offset) / 2);
-  margin-inline-end: var(--vkui_internal--grid_avatar_image_offset);
-  background-size: cover;
   background-position: center;
+  background-size: cover;
+  block-size: calc(50% - var(--vkui_internal--grid_avatar_image_offset) / 2);
+  inline-size: calc(50% - var(--vkui_internal--grid_avatar_image_offset) / 2);
+  margin-inline-end: var(--vkui_internal--grid_avatar_image_offset);
 }
 
 .item:only-child {

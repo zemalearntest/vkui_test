@@ -2,18 +2,18 @@
   position: relative;
   display: flex;
   box-sizing: border-box;
-  text-decoration: none;
-  border: 0;
-  margin: 0;
-  padding: var(--vkui--spacing_size_m);
-  border-radius: var(--vkui--size_border_radius_paper--regular);
-  inline-size: 100%;
-  flex-grow: 1;
   flex-basis: 0;
+  flex-grow: 1;
   align-items: center;
+  padding: var(--vkui--spacing_size_m);
+  border: 0;
+  border-radius: var(--vkui--size_border_radius_paper--regular);
+  margin: 0;
   font-family: var(--vkui--font_caption1--font_family--regular);
   font-size: var(--vkui--font_caption1--font_size--regular);
+  inline-size: 100%;
   line-height: var(--vkui--font_caption1--line_height--regular);
+  text-decoration: none;
 }
 
 .withFakeEndIcon {

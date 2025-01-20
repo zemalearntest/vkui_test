@@ -5,10 +5,10 @@
 }
 
 .scrollIn {
+  display: flex;
   margin: 0;
   padding-block: calc(var(--vkui--size_subnavigation_bar_padding_vertical--regular) + 8px);
   padding-inline: 0;
-  display: flex;
 }
 
 .scrollIn::before,
@@ -18,8 +18,8 @@
 }
 
 .item {
-  list-style-type: none;
   display: flex;
+  list-style-type: none;
 }
 
 .item + .item {

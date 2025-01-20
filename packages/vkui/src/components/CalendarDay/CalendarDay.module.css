@@ -1,16 +1,16 @@
 .content {
   border-radius: 0;
-  font-size: 14px;
+  block-size: 100%;
   color: var(--vkui--color_text_primary);
   font-family: var(--vkui--font_family_base);
-  block-size: 100%;
+  font-size: 14px;
 }
 
 .host,
 .hidden {
-  border-radius: 0;
   flex-basis: calc(100% / 7);
   flex-grow: 0;
+  border-radius: 0;
 }
 
 .hidden,
@@ -33,14 +33,14 @@
 
 .selectionStart.selected,
 .hintedSelectionStart {
-  border-start-start-radius: 8px;
   border-end-start-radius: 8px;
+  border-start-start-radius: 8px;
 }
 
 .selectionEnd.selected,
 .hintedSelectionEnd {
-  border-start-end-radius: 8px;
   border-end-end-radius: 8px;
+  border-start-end-radius: 8px;
 }
 
 .dayNumber {
@@ -52,11 +52,11 @@
 }
 
 .today .dayNumber::after {
-  content: '';
-  border-block-end: 2px solid var(--vkui--color_stroke_accent);
-  inline-size: 16px;
-  display: block;
   position: relative;
+  display: block;
+  border-block-end: 2px solid var(--vkui--color_stroke_accent);
+  content: '';
+  inline-size: 16px;
   inset-inline-start: 50%;
   transform: translateX(-50%);
 }

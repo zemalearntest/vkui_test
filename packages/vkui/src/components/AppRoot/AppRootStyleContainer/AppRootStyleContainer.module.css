@@ -6,11 +6,11 @@
  * Такие стили лучше помещать сразу в AppRoot.
  */
 .host {
-  -webkit-tap-highlight-color: transparent;
-  text-size-adjust: 100%;
-  font-family: var(--vkui--font_family_base);
   color: var(--vkui--color_text_primary);
   color-scheme: var(--vkui--colors_scheme);
+  font-family: var(--vkui--font_family_base);
+  -webkit-tap-highlight-color: transparent;
+  text-size-adjust: 100%;
 }
 
 .sizeYCompact {

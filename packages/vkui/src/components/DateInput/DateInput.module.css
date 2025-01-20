@@ -1,13 +1,13 @@
 .input {
+  z-index: var(--vkui_internal--z_index_form_field_element);
   display: block;
   flex-grow: 1;
   align-self: center;
-  margin-inline: 10px 14px;
-  z-index: var(--vkui_internal--z_index_form_field_element);
   cursor: text;
-  white-space: nowrap;
-  user-select: text;
   font-variant-numeric: tabular-nums;
+  margin-inline: 10px 14px;
+  user-select: text;
+  white-space: nowrap;
 }
 
 .inputTimeDivider {

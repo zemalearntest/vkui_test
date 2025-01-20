@@ -1,25 +1,25 @@
 .host {
   position: relative;
-  inline-size: 100%;
   block-size: 100%;
+  inline-size: 100%;
 }
 
 .in {
   position: relative;
+  display: flex;
   box-sizing: border-box;
+  flex-direction: column;
   inline-size: 100%;
   min-block-size: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 .centered {
   display: flex;
+  box-sizing: border-box;
   flex: 1 0;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-sizing: border-box;
 }
 
 /* stylelint-disable selector-max-universal */

@@ -1,8 +1,8 @@
 .root {
   display: flex;
-  margin-inline: auto;
-  color: var(--vkui--color_text_subhead);
   background-color: var(--vkui--color_background_content);
+  color: var(--vkui--color_text_subhead);
+  margin-inline: auto;
 }
 
 .maxWidth {
@@ -10,11 +10,11 @@
 }
 
 .blog {
-  max-inline-size: var(--vkui_docs_blog--max-width);
-  padding-block-start: var(--vkui--spacing_size_4xl);
-  padding-block-end: 60px;
-  padding-inline: 40px;
   flex-direction: column;
+  max-inline-size: var(--vkui_docs_blog--max-width);
+  padding-block-end: 60px;
+  padding-block-start: var(--vkui--spacing_size_4xl);
+  padding-inline: 40px;
 }
 
 @media (--viewWidth-smallTabletMinus) {

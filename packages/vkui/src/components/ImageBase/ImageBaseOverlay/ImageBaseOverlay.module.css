@@ -1,17 +1,17 @@
 .host {
   position: absolute;
   z-index: var(--vkui_internal--z_index_image_base_overlay);
-  inset-block-start: 0;
-  inset-inline-start: 0;
   display: flex;
+  box-sizing: border-box;
   align-items: center;
   justify-content: center;
-  box-sizing: border-box;
-  inline-size: 100%;
-  block-size: 100%;
   border: 0;
   border-radius: inherit;
+  block-size: 100%;
   box-shadow: inherit;
+  inline-size: 100%;
+  inset-block-start: 0;
+  inset-inline-start: 0;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
@@ -31,11 +31,11 @@
 }
 
 .themeLight {
-  color: var(--vkui--color_icon_accent);
   background-color: var(--vkui--color_avatar_overlay_inverse_alpha);
+  color: var(--vkui--color_icon_accent);
 }
 
 .themeDark {
-  color: var(--vkui--color_icon_contrast);
   background-color: var(--vkui--color_avatar_overlay);
+  color: var(--vkui--color_icon_contrast);
 }

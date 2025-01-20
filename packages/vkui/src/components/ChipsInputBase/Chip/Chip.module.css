@@ -1,11 +1,11 @@
 .host {
   display: inline-flex;
+  box-sizing: border-box;
   align-items: center;
   border: var(--vkui--size_border--regular) solid var(--vkui--color_image_border_alpha);
-  background: var(--vkui--color_background_content);
   border-radius: 6px;
+  background: var(--vkui--color_background_content);
   block-size: 32px;
-  box-sizing: border-box;
 }
 
 .in,
@@ -13,13 +13,13 @@
   position: relative;
   display: flex;
   align-items: center;
-  block-size: 100%;
   border-radius: inherit;
+  block-size: 100%;
 }
 
 .in {
-  padding-inline-start: 8px;
   overflow: hidden;
+  padding-inline-start: 8px;
 }
 
 .in:last-of-type {
@@ -27,34 +27,34 @@
 }
 
 .content {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  color: var(--vkui--color_text_primary);
   display: inline-block;
+  overflow: hidden;
+  color: var(--vkui--color_text_primary);
+  font-family: var(--vkui--font_paragraph--font_family--regular);
 
   /* Typography/Paragraph */
   font-size: var(--vkui--font_paragraph--font_size--regular);
-  line-height: var(--vkui--font_paragraph--line_height--regular);
   font-weight: var(--vkui--font_paragraph--font_weight--regular);
-  font-family: var(--vkui--font_paragraph--font_family--regular);
+  line-height: var(--vkui--font_paragraph--line_height--regular);
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .sizeYCompact .content {
+  font-family: var(--vkui--font_footnote--font_family--regular);
   /* Typography/Footnote */
   font-size: var(--vkui--font_footnote--font_size--regular);
-  line-height: var(--vkui--font_footnote--line_height--regular);
   font-weight: var(--vkui--font_footnote--font_weight--regular);
-  font-family: var(--vkui--font_footnote--font_family--regular);
+  line-height: var(--vkui--font_footnote--line_height--regular);
 }
 
 @media (--sizeY-compact) {
   .sizeYNone .content {
+    font-family: var(--vkui--font_footnote--font_family--regular);
     /* Typography/Footnote */
     font-size: var(--vkui--font_footnote--font_size--regular);
-    line-height: var(--vkui--font_footnote--line_height--regular);
     font-weight: var(--vkui--font_footnote--font_weight--regular);
-    font-family: var(--vkui--font_footnote--font_family--regular);
+    line-height: var(--vkui--font_footnote--line_height--regular);
   }
 }
 
@@ -64,15 +64,15 @@
 }
 
 .remove {
+  box-sizing: border-box;
   flex: 0 0 100%;
   padding: 5px;
-  transform: translateX(-1px);
-  color: var(--vkui--color_icon_secondary);
   border: 0;
   border-radius: inherit;
   background: transparent;
-  box-sizing: border-box;
+  color: var(--vkui--color_icon_secondary);
   cursor: pointer;
+  transform: translateX(-1px);
 }
 
 .before {

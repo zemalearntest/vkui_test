@@ -1,17 +1,17 @@
 .host {
   position: relative;
+  isolation: isolate;
 
   /**
    * ⚠️ WARNING ⚠️
    * `overflow-y` мы не трогаем, т.к. из-за `hidden` могут обрезаться тени у потомков.
    */
   overflow-x: hidden;
-  isolation: isolate;
 }
 
 .in {
-  overflow-x: auto;
   -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
 
   /**
    * Для удаление скролла в Firefox.
@@ -31,8 +31,8 @@
 }
 
 .arrow {
-  z-index: var(--vkui_internal--z_index_horizontal_scroll_arrow);
   position: absolute;
+  z-index: var(--vkui_internal--z_index_horizontal_scroll_arrow);
   inset-block-start: 0;
   opacity: 0;
 }
@@ -69,8 +69,8 @@
 /* stylelint-disable-next-line selector-pseudo-class-disallowed-list */
 :global(.vkuiInternalTabs--withGaps) .inWrapper::before {
   display: block;
-  inline-size: var(--vkui--size_base_padding_horizontal--regular);
   flex-shrink: 0;
   block-size: 1px;
   content: '';
+  inline-size: var(--vkui--size_base_padding_horizontal--regular);
 }

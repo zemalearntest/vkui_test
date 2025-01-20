@@ -3,9 +3,9 @@
 }
 
 .menuItem {
-  block-size: 44px;
   display: flex;
   align-items: center;
+  block-size: 44px;
   color: var(--vkui--color_text_secondary);
   text-decoration: none;
 }
@@ -35,13 +35,13 @@
 }
 
 .menuIcon {
-  margin-inline-end: var(--vkui--spacing_size_xl);
-  color: var(--vkui--color_icon_secondary);
-  background-color: var(--vkui--color_background_tertiary);
   padding: 8px;
   border-radius: 8px;
+  background-color: var(--vkui--color_background_tertiary);
   block-size: var(--vkui_docs--menu-item-icon-size);
+  color: var(--vkui--color_icon_secondary);
   inline-size: var(--vkui_docs--menu-item-icon-size);
+  margin-inline-end: var(--vkui--spacing_size_xl);
 }
 
 .activeMenuIcon {
@@ -53,8 +53,8 @@
 }
 
 .nestedMenu {
-  margin-inline-start: var(--vkui--spacing_size_xl);
   position: relative;
+  margin-inline-start: var(--vkui--spacing_size_xl);
 }
 
 .menuItemWithIcon {
@@ -62,10 +62,10 @@
 }
 
 .currentMenu .nestedMenu .nestedMenu::before {
-  content: '';
   position: absolute;
   display: block;
+  background-color: var(--vkui_docs--color_stroke_separator_secondary);
+  content: '';
   inline-size: 1px;
   inset-block: var(--vkui--size_base_padding_vertical--regular);
-  background-color: var(--vkui_docs--color_stroke_separator_secondary);
 }

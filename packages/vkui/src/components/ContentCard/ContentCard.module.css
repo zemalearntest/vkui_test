@@ -8,20 +8,20 @@
 }
 
 .tappable {
-  border-radius: var(--vkui--size_card_border_radius--regular);
-  text-decoration: none;
-  color: var(--vkui--color_text_primary);
-  block-size: 100%;
   display: block;
+  border-radius: var(--vkui--size_card_border_radius--regular);
+  block-size: 100%;
+  color: var(--vkui--color_text_primary);
+  text-decoration: none;
 }
 
 .img {
-  object-fit: cover;
   display: block;
-  border-start-start-radius: var(--vkui--size_card_border_radius--regular);
-  border-start-end-radius: var(--vkui--size_card_border_radius--regular);
   border-end-end-radius: 0;
   border-end-start-radius: 0;
+  border-start-end-radius: var(--vkui--size_card_border_radius--regular);
+  border-start-start-radius: var(--vkui--size_card_border_radius--regular);
+  object-fit: cover;
 }
 
 .text:not(:last-child) {

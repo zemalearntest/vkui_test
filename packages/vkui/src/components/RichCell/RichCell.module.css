@@ -1,12 +1,12 @@
 .host {
   display: flex;
-  padding-block: var(--vkui--spacing_size_m);
-  padding-inline: var(--vkui--size_base_padding_horizontal--regular);
-  min-block-size: 64px;
   box-sizing: border-box;
   color: var(--vkui--color_text_primary);
-  text-decoration: none; /* в случае если Component="a" */
   font-family: var(--vkui--font_family_base);
+  min-block-size: 64px;
+  padding-block: var(--vkui--spacing_size_m);
+  padding-inline: var(--vkui--size_base_padding_horizontal--regular);
+  text-decoration: none; /* в случае если Component="a" */
 }
 
 .sizeYCompact {
@@ -25,24 +25,24 @@
 
 .inWrapper {
   display: flex;
-  justify-content: space-between;
   flex-grow: 1;
+  justify-content: space-between;
   min-inline-size: 0;
 }
 
 .in {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   flex-grow: 1;
+  justify-content: center;
   max-inline-size: 100%;
   min-inline-size: 0;
 }
 
 .content {
   display: flex;
-  word-break: break-word;
   justify-content: space-between;
+  word-break: break-word;
 }
 
 .contentBefore {
@@ -65,14 +65,14 @@
 
 .contentAfter {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  padding-inline-start: var(--vkui--spacing_size_xl);
   box-sizing: border-box;
-  flex-shrink: 0;
-  min-inline-size: 0;
-  flex-grow: 1;
   flex-basis: 100px;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 0;
+  align-items: flex-end;
+  min-inline-size: 0;
+  padding-inline-start: var(--vkui--spacing_size_xl);
 }
 
 .alignSelfStart {
@@ -92,10 +92,10 @@
 }
 
 .afterCaption {
-  margin-block-start: var(--vkui--spacing_size_2xs);
+  color: var(--vkui--color_text_secondary);
   font-size: var(--vkui--font_footnote--font_size--regular);
   line-height: var(--vkui--font_footnote--line_height--regular);
-  color: var(--vkui--color_text_secondary);
+  margin-block-start: var(--vkui--spacing_size_2xs);
 }
 
 .sizeYCompact .afterCaption {
@@ -115,8 +115,8 @@
 }
 
 .extraSubtitle {
-  margin-block-start: 1px;
   color: var(--vkui--color_text_secondary);
+  margin-block-start: 1px;
 }
 
 .children {
@@ -127,10 +127,10 @@
 .textEllipsis .children,
 .textEllipsis .subtitle,
 .textEllipsis .extraSubtitle {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  max-inline-size: 100%;
   overflow: hidden;
+  max-inline-size: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .bottom {

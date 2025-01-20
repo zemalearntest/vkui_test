@@ -1,12 +1,12 @@
 .host {
-  margin: 0;
   border: 0;
-  box-shadow: none;
-  background: transparent;
+  margin: 0;
   appearance: none;
-  -webkit-tap-highlight-color: transparent;
+  background: transparent;
+  box-shadow: none;
   outline: none;
   resize: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .noPadding {

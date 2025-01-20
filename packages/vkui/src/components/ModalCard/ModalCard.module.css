@@ -1,8 +1,8 @@
 .host {
-  padding: var(--vkui--spacing_size_m);
-  margin-inline: auto;
-  inline-size: 100%;
   box-sizing: border-box;
+  padding: var(--vkui--spacing_size_m);
+  inline-size: 100%;
+  margin-inline: auto;
 }
 
 .host:focus {
@@ -28,8 +28,8 @@
     --vkui_internal_ModalCard--safeAreaInsetBottom: var(--vkui_internal--safe_area_inset_bottom);
 
     position: absolute;
-    inset-inline: 0;
     inset-block-end: 0;
+    inset-inline: 0;
     margin-block-end: var(--vkui_internal_ModalCard--safeAreaInsetBottom);
     transform: translate3d(0, calc(100% - var(--vkui_internal_ModalCard--translateY)), 0);
     transition: transform 0.4s var(--vkui_internal--spring-easing);

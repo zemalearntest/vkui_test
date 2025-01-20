@@ -1,8 +1,8 @@
 .host {
-  inline-size: 100%;
   block-size: 100%;
-  overflow-y: auto;
+  inline-size: 100%;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 @supports (scrollbar-color: auto) {
@@ -25,9 +25,9 @@
   }
 
   .host::-webkit-scrollbar {
-    inline-size: 12px;
-    block-size: 12px;
     background: 0 0;
+    block-size: 12px;
+    inline-size: 12px;
   }
 
   .host::-webkit-scrollbar-track,
@@ -37,16 +37,16 @@
 
   .host::-webkit-scrollbar-thumb,
   .host::-webkit-scrollbar-thumb {
-    background-color: var(--vkui--color_icon_tertiary_alpha);
     border: 3px solid transparent;
     border-radius: 6px;
     background-clip: padding-box, content-box;
+    background-color: var(--vkui--color_icon_tertiary_alpha);
   }
 
   .host::-webkit-scrollbar-thumb:hover,
   .host::-webkit-scrollbar-thumb:active {
-    background-color: var(--vkui--color_icon_tertiary_alpha--hover);
     border: 2px solid transparent;
+    background-color: var(--vkui--color_icon_tertiary_alpha--hover);
   }
 }
 

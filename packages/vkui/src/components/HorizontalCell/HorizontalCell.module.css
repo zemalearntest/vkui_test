@@ -8,9 +8,9 @@
 }
 
 .body {
+  font-family: inherit;
   max-inline-size: inherit;
   text-decoration: none;
-  font-family: inherit;
 }
 
 /* Перебиваем селектор в Tappable--sizeX-(compact|none) */
@@ -19,10 +19,10 @@
 }
 
 .content {
-  max-inline-size: inherit;
   color: var(--vkui--color_text_primary);
-  word-break: break-word;
+  max-inline-size: inherit;
   text-overflow: ellipsis;
+  word-break: break-word;
 }
 
 .subtitle {

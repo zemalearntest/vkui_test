@@ -2,9 +2,9 @@
   display: block;
   flex-grow: 0;
   flex-shrink: 0;
-  inline-size: 6px;
-  block-size: 6px;
   border-radius: 50%;
+  block-size: 6px;
+  inline-size: 6px;
 }
 
 .modeNew {

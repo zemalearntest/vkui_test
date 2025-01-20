@@ -12,27 +12,27 @@
 }
 
 .removable {
-  max-inline-size: 100%;
+  overflow: hidden;
+  flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 0;
-  flex-basis: 0;
   padding: 0;
+  max-inline-size: 100%;
   min-inline-size: 1px;
-  overflow: hidden;
 }
 
 .top {
-  padding-block: 2px 8px;
-  color: var(--vkui--color_text_subhead);
   display: flex;
   align-items: flex-end;
+  color: var(--vkui--color_text_subhead);
+  padding-block: 2px 8px;
 }
 
 .label,
 .aside {
   overflow: hidden;
-  white-space: nowrap;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .label {
@@ -99,11 +99,11 @@
  */
 /* stylelint-disable-next-line selector-pseudo-class-disallowed-list */
 :global(.vkuiInternalFormLayoutGroup--mode-horizontal) .host {
-  max-inline-size: 100%;
+  flex-basis: 0;
   flex-grow: 1;
   flex-shrink: 0;
-  flex-basis: 0;
   padding: 0;
+  max-inline-size: 100%;
   min-inline-size: 1px;
 }
 
@@ -125,8 +125,8 @@
 :global(.vkuiInternalFormLayoutGroup--mode-vertical.vkuiInternalFormLayoutGroup--segmented)
   .host
   + .host {
-  padding-block-start: 0;
   margin-block-start: calc(-1 * var(--vkui--size_border--regular));
+  padding-block-start: 0;
 }
 
 /* stylelint-disable-next-line selector-pseudo-class-disallowed-list */

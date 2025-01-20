@@ -1,10 +1,10 @@
 .host {
   --css-transition-duration: 1s;
 
-  inline-size: 50vh;
-  block-size: 50vh;
-  background-color: var(--vkui--color_background_accent);
   border-radius: 8px;
+  background-color: var(--vkui--color_background_accent);
+  block-size: 50vh;
+  inline-size: 50vh;
 }
 
 .appear {

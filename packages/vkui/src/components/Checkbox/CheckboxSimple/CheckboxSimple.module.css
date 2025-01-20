@@ -1,10 +1,10 @@
 .host {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   border-radius: 50%;
-  inline-size: var(--vkui--size_field_height--regular);
   block-size: var(--vkui--size_field_height--regular);
+  inline-size: var(--vkui--size_field_height--regular);
 }
 
 .host[disabled] {
@@ -16,13 +16,13 @@
  */
 
 .sizeYCompact {
-  inline-size: var(--vkui--size_field_height--compact);
   block-size: var(--vkui--size_field_height--compact);
+  inline-size: var(--vkui--size_field_height--compact);
 }
 
 @media (--sizeY-compact) {
   .sizeYNone {
-    inline-size: var(--vkui--size_field_height--compact);
     block-size: var(--vkui--size_field_height--compact);
+    inline-size: var(--vkui--size_field_height--compact);
   }
 }

@@ -1,9 +1,9 @@
 .host {
-  inset: 0;
   background-color: rgba(0, 0, 0, 0.4);
-  user-select: none;
+  inset: 0;
   -webkit-tap-highlight-color: transparent;
   transition: opacity 0.3s linear;
+  user-select: none;
   will-change: opacity;
 }
 

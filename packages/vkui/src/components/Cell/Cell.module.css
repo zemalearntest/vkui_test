@@ -66,8 +66,8 @@
 
 /* stylelint-disable-next-line selector-pseudo-class-disallowed-list */
 .ios.removable :global(.vkuiInternalRemovable__action) {
-  inset-inline: 0 auto;
   z-index: 1;
+  inset-inline: 0 auto;
 }
 
 /* stylelint-disable-next-line selector-pseudo-class-disallowed-list */

@@ -1,9 +1,9 @@
 /* stylelint-disable selector-max-universal */
 .host {
-  cursor: ns-resize;
   color: var(--vkui--color_icon_secondary);
-  user-select: none;
+  cursor: ns-resize;
   touch-action: manipulation;
+  user-select: none;
 }
 
 .icon {

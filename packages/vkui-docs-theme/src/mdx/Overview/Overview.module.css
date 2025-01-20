@@ -1,22 +1,21 @@
 .root {
-  padding-block: 32px;
-  padding-inline: 32px;
-  border-radius: 16px;
-  background-color: var(--vkui--color_background_tertiary);
-  color: var(--vkui--color_text_primary);
-  margin-block-end: 32px;
-  margin-block-start: var(--vkui--spacing_size_3xl);
-  background-image: url('./background.png');
   position: relative;
   overflow: hidden;
   border: 1px solid var(--vkui--color_separator_primary);
+  border-radius: 16px;
+  background-color: var(--vkui--color_background_tertiary);
+  background-image: url('./background.png');
+  color: var(--vkui--color_text_primary);
   isolation: isolate;
+  margin-block-end: 32px;
+  margin-block-start: var(--vkui--spacing_size_3xl);
+  padding-block: 32px;
+  padding-inline: 32px;
 }
 
 .root::before {
-  content: '';
   position: absolute;
-  inset: 0;
+  z-index: -1;
   background-image: linear-gradient(
       to right,
       var(--vkui--color_separator_primary) 1px,
@@ -24,8 +23,9 @@
     ),
     linear-gradient(to bottom, var(--vkui--color_separator_primary) 1px, transparent 1px);
   background-size: 32px 32px;
+  content: '';
+  inset: 0;
   mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 30%, #000 100%);
-  z-index: -1;
 }
 
 /* No classes for markdown content */

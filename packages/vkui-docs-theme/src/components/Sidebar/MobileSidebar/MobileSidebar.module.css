@@ -1,16 +1,16 @@
 .root {
-  display: flex;
-  flex-direction: column;
   position: fixed;
-  inset-block-start: 0;
-  inset-block-end: 0;
-  inline-size: 380px;
-  inset-inline-end: 0;
-  background-color: var(--vkui_docs--color_background_content);
   /* TODO: move to the common file with all the sizes? */
   z-index: 30;
-  will-change: transform;
+  display: flex;
+  flex-direction: column;
   border-radius: var(--vkui--size_border_radius--regular);
+  background-color: var(--vkui_docs--color_background_content);
+  inline-size: 380px;
+  inset-block-end: 0;
+  inset-block-start: 0;
+  inset-inline-end: 0;
+  will-change: transform;
 }
 
 @media (--viewWidth-smallTabletMinus) {
@@ -21,13 +21,13 @@
 
 .backdrop {
   position: fixed;
-  inset: 0;
   /* TODO move to the common file with all the sizes? */
   z-index: 29;
   background-color: var(--vkui--color_overlay_primary);
-  will-change: opacity;
+  inset: 0;
   opacity: 0;
   transition: opacity 0.8s;
+  will-change: opacity;
 }
 
 .backdropShow {
@@ -62,13 +62,13 @@
 }
 
 .inner {
-  padding-block: var(--vkui--spacing_size_2xl);
-  padding-inline: var(--vkui--spacing_size_2xl);
+  flex-grow: 1;
   overflow-x: hidden;
   overflow-y: auto;
-  flex-grow: 1;
-  scrollbar-width: thin;
+  padding-block: var(--vkui--spacing_size_2xl);
+  padding-inline: var(--vkui--spacing_size_2xl);
   scrollbar-gutter: stable;
+  scrollbar-width: thin;
 }
 
 @media (--viewWidth-smallTabletMinus) {
@@ -120,8 +120,8 @@
 
 .extra {
   position: sticky;
-  inset-block-end: 0;
   display: flex;
+  inset-block-end: 0;
   padding-block: var(--vkui--spacing_size_2xl);
   padding-inline: var(--vkui--spacing_size_2xl);
 }

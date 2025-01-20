@@ -1,11 +1,11 @@
 .host {
   display: flex;
+  box-sizing: border-box;
   align-items: center;
   justify-content: flex-start;
-  padding-inline: var(--vkui--size_base_padding_horizontal--regular);
   font-family: var(--vkui--font_family_base);
   min-block-size: var(--vkui--size_field_height--regular);
-  box-sizing: border-box;
+  padding-inline: var(--vkui--size_base_padding_horizontal--regular);
 }
 
 /**

@@ -1,32 +1,32 @@
 .root {
   display: flex;
   align-items: center;
-  padding-block-start: var(--vkui--spacing_size_4xl);
   border-block-start: 1px solid var(--vkui_docs--color_stroke_separator_secondary);
   margin-block-start: 56px;
+  padding-block-start: var(--vkui--spacing_size_4xl);
 }
 
 .navLinkItem {
   display: flex;
   flex-direction: column;
-  color: var(--vkui--color_text_subhead);
   align-items: flex-end;
+  color: var(--vkui--color_text_subhead);
   padding-block: var(--vkui--spacing_size_m);
   padding-inline: var(--vkui--spacing_size_xl);
   text-decoration: none;
 }
 
 .navLink {
-  margin-block-start: var(--vkui--spacing_size_s);
   display: flex;
   align-items: center;
   justify-content: flex-end;
   color: var(--vkui--color_text_primary);
+  margin-block-start: var(--vkui--spacing_size_s);
 }
 
 .navLinkItemNext {
-  margin-inline-start: auto;
   align-items: flex-start;
+  margin-inline-start: auto;
 }
 
 .navLinkPrevIcon {

@@ -15,9 +15,9 @@
   position: relative;
   display: block;
   border-radius: var(--vkui_internal--Switch__track_shape);
-  user-select: none;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 
 .rtl {
@@ -160,31 +160,31 @@
 .track {
   position: relative;
   display: block;
-  inline-size: var(--vkui_internal--Switch__track_width);
-  block-size: var(--vkui_internal--Switch__track_height);
   border-radius: var(--vkui_internal--Switch__track_shape);
   background-color: var(--vkui_internal--Switch__track_color);
+  block-size: var(--vkui_internal--Switch__track_height);
+  inline-size: var(--vkui_internal--Switch__track_width);
   transition: background-color var(--vkui_internal--Switch__track_color_duration) linear;
 }
 
 .default .track::before {
-  content: '';
   position: absolute;
-  inset: 0;
-  opacity: var(--vkui_internal--Switch__track_shadow_visibility);
-  border-radius: inherit;
   border: var(--vkui_internal--Switch__track_outline_width) solid
     var(--vkui--color_field_border_alpha);
+  border-radius: inherit;
+  content: '';
+  inset: 0;
+  opacity: var(--vkui_internal--Switch__track_shadow_visibility);
   transition: opacity var(--vkui_internal--Switch__track_color_duration) linear;
 }
 
 .handle {
   position: absolute;
-  inset-inline-start: 0;
-  inset-block-start: 0;
-  inline-size: var(--vkui_internal--Switch__handle_width);
-  block-size: var(--vkui_internal--Switch__handle_height);
   border-radius: 9999px;
+  block-size: var(--vkui_internal--Switch__handle_height);
+  inline-size: var(--vkui_internal--Switch__handle_width);
+  inset-block-start: 0;
+  inset-inline-start: 0;
   /* prettier-ignore */
   transform: translate(var(--vkui_internal--Switch__handle_shift_x), var(--vkui_internal--Switch__handle_shift_y));
   /* prettier-ignore */
@@ -192,17 +192,17 @@
 }
 
 .handle::after {
-  content: '';
   position: absolute;
-  inset: 0;
   border-radius: inherit;
   background-color: var(--vkui_internal--Switch__handle_color);
   box-shadow: var(--vkui_internal--Switch__handle_shadow);
+  content: '';
+  inset: 0;
   transform: scale(var(--vkui_internal--Switch__handle_scale));
-  transition-property: transform, background-color;
-  transition-timing-function: var(--vkui_internal--Switch__handle_shift_x_easing), linear;
   /* prettier-ignore */
   transition-duration: var(--vkui_internal--Switch__handle_scale_duration), var(--vkui_internal--Switch__handle_color_duration);
+  transition-property: transform, background-color;
+  transition-timing-function: var(--vkui_internal--Switch__handle_shift_x_easing), linear;
 }
 
 .handleWithRipple::before {
@@ -211,28 +211,28 @@
   --vkui_internal--Switch__handleRipple_color: var(--vkui--color_icon_medium);
   --vkui_internal--Switch__handleRipple_color_duration: 15ms;
 
-  content: '';
   position: absolute;
-  inset-block-start: 50%;
-  inset-inline-start: 50%;
-  inline-size: 40px;
-  block-size: 40px;
   border-radius: inherit;
   background-color: var(--vkui_internal--Switch__handleRipple_color);
+  block-size: 40px;
+  content: '';
+  inline-size: 40px;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
   opacity: var(--vkui_internal--Switch__handleRipple_opacity);
   transform: translate(calc(-50% * var(--vkui_internal--Switch__handle_shift_x_direction)), -50%);
-  transition-property: opacity, background-color;
   /* prettier-ignore */
   transition-duration:
     var(--vkui_internal--Switch__handleRipple_opacity_duration),
     var(--vkui_internal--Switch__handleRipple_color_duration);
+  transition-property: opacity, background-color;
   transition-timing-function: linear;
 }
 
 @media (--sizeY-compact) {
   .handleWithRipple::before {
-    inline-size: 24px;
     block-size: 24px;
+    inline-size: 24px;
   }
 }
 

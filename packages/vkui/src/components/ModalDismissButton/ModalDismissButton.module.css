@@ -1,21 +1,21 @@
 .host {
   position: absolute;
+  box-sizing: border-box;
+  padding: 18px;
+  block-size: 56px;
+  color: var(--vkui--color_icon_contrast);
+  inline-size: 56px;
   inset-block-start: 0;
   inset-inline-end: -56px;
-  inline-size: 56px;
-  block-size: 56px;
-  padding: 18px;
-  box-sizing: border-box;
-  color: var(--vkui--color_icon_contrast);
 }
 
 .host::before {
+  position: absolute;
   display: block;
+  border-radius: 50%;
+  background: var(--vkui--color_overlay_secondary);
   content: '';
   inset: 14px;
-  background: var(--vkui--color_overlay_secondary);
-  border-radius: 50%;
-  position: absolute;
   transition: background-color 0.15s ease-out;
 }
 

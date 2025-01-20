@@ -33,16 +33,16 @@
 .field {
   position: relative;
   display: flex;
-  flex-grow: 2;
+  overflow: hidden;
   flex-basis: 0%;
-  block-size: var(--vkui_internal--search_height);
-  background-color: var(--vkui--color_search_field_background);
+  flex-grow: 2;
   border-radius: var(--vkui--size_border_radius--regular);
+  background-color: var(--vkui--color_search_field_background);
+  block-size: var(--vkui_internal--search_height);
   /**
    * Костыль для PanelHeader. Необходимо для растягивания на всю ширину.
   */
   inline-size: 10000px;
-  overflow: hidden;
 }
 
 .field:hover {
@@ -61,34 +61,34 @@
 }
 
 .input {
-  padding-inline-start: 12px;
-  color: var(--vkui--color_icon_medium);
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  inline-size: calc(100% - 1px);
-  block-size: 100%;
-  border-radius: inherit;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: inherit;
+  block-size: 100%;
+  color: var(--vkui--color_icon_medium);
+  inline-size: calc(100% - 1px);
+  padding-inline-start: 12px;
 }
 
 .nativeInput {
   position: absolute;
-  inset: 0;
-  block-size: 100%;
-  appearance: none; /* не используем textfield из-за бага в iOS 15.1 http://www.openradar.me/FB9744107 */
-  border: 0;
-  margin: 0;
-  padding: 0;
-  padding-inline-start: 36px;
   box-sizing: border-box;
-  border-radius: inherit;
-  max-inline-size: 100%;
   flex-grow: 1;
-  min-inline-size: 0;
-  inline-size: stretch; /* автопрефиксер добавит фолбеки https://caniuse.com/mdn-css_properties_width_stretch */
+  padding: 0;
+  border: 0;
+  border-radius: inherit;
+  margin: 0;
+  appearance: none; /* не используем textfield из-за бага в iOS 15.1 http://www.openradar.me/FB9744107 */
   background-color: transparent;
+  block-size: 100%;
   color: var(--vkui--color_text_primary);
+  inline-size: stretch; /* автопрефиксер добавит фолбеки https://caniuse.com/mdn-css_properties_width_stretch */
+  inset: 0;
+  max-inline-size: 100%;
+  min-inline-size: 0;
+  padding-inline-start: 36px;
 }
 
 .nativeInput::-webkit-search-decoration,
@@ -103,14 +103,14 @@
 }
 
 .hasAfter .nativeInput {
-  border-start-end-radius: 0;
   border-end-end-radius: 0;
+  border-start-end-radius: 0;
 }
 
 .disabled {
+  cursor: default;
   opacity: var(--vkui--opacity_disable_accessibility);
   pointer-events: none;
-  cursor: default;
 }
 
 .nativeInput:disabled {
@@ -133,9 +133,9 @@
   align-items: center;
   justify-content: center;
   color: var(--vkui--color_icon_secondary);
-  transition: transform 0.3s var(--vkui--animation_easing_platform);
   /* Используем translate3d, чтобы поправить дергание при наведении в Safari */
   transform: translate3d(calc(var(--vkui_internal--search_shift_direction) * 100%), 0, 0);
+  transition: transform 0.3s var(--vkui--animation_easing_platform);
 
   --vkui_internal--search_icon_size: calc(var(--vkui_internal--search_height) + 4px);
 }
@@ -157,12 +157,12 @@
 }
 
 .icon {
-  inline-size: var(--vkui_internal--search_icon_size);
   display: flex;
   align-items: center;
   justify-content: center;
-  block-size: 100%;
   border-radius: var(--vkui--size_border_radius--regular);
+  block-size: 100%;
+  inline-size: var(--vkui_internal--search_icon_size);
 }
 
 /* stylelint-disable-next-line selector-pseudo-class-disallowed-list */
@@ -173,12 +173,12 @@
 .after {
   position: relative;
   display: flex;
-  flex-grow: 0;
   flex-basis: 0%;
-  min-inline-size: 0;
+  flex-grow: 0;
   max-inline-size: min-content;
-  transition: flex-grow 0.3s var(--vkui--animation_easing_platform);
+  min-inline-size: 0;
   pointer-events: none;
+  transition: flex-grow 0.3s var(--vkui--animation_easing_platform);
 }
 
 .focused .after,
@@ -189,11 +189,11 @@
 
 .after::before,
 .after::after {
-  content: '';
-  flex-shrink: 0;
   display: block;
-  inline-size: 4px;
+  flex-shrink: 0;
   block-size: 100%;
+  content: '';
+  inline-size: 4px;
 }
 
 .withPadding .after::after {
@@ -202,15 +202,15 @@
 
 .afterTextClip {
   display: block;
+  overflow: hidden;
   text-overflow: clip;
   white-space: nowrap;
-  overflow: hidden;
 }
 
 .findButton {
-  min-inline-size: initial;
-  max-inline-size: initial;
   inline-size: initial;
+  max-inline-size: initial;
+  min-inline-size: initial;
 }
 
 /* stylelint-disable-next-line selector-pseudo-class-disallowed-list */

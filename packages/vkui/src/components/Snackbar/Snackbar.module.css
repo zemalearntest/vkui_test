@@ -10,9 +10,9 @@
   --vkui_internal--snackbar_animation_text_direction: 1;
 
   position: fixed;
+  z-index: var(--vkui--z_index_popout);
   inset-inline: var(--vkui_internal--safe_area_inset_left)
     var(--vkui_internal--safe_area_inset_right);
-  z-index: var(--vkui--z_index_popout);
   user-select: none;
 }
 
@@ -91,8 +91,8 @@
       0
     );
 
-    inset-inline-start: var(--vkui_internal--safe_area_inset_left);
     inset-inline-end: auto;
+    inset-inline-start: var(--vkui_internal--safe_area_inset_left);
   }
 
   .placementTopEnd,
@@ -108,16 +108,16 @@
       0
     );
 
-    inset-inline-start: auto;
     inset-inline-end: var(--vkui_internal--safe_area_inset_right);
+    inset-inline-start: auto;
   }
 }
 
 .in {
   padding: var(--vkui_internal--snackbar_in_padding);
   animation-duration: var(--vkui_internal--snackbar_animation_duration);
-  animation-timing-function: var(--vkui--animation_easing_platform);
   animation-fill-mode: both;
+  animation-timing-function: var(--vkui--animation_easing_platform);
 }
 
 .placementTopStart .in,
@@ -162,8 +162,8 @@
 }
 
 .stateEntered .in {
-  transition-property: transform;
   transition-duration: var(--vkui_internal--snackbar_animation_duration);
+  transition-property: transform;
   transition-timing-function: var(--vkui--animation_easing_platform);
 }
 
