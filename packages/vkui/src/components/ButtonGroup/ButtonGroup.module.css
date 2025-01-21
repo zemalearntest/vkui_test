@@ -62,6 +62,16 @@
   margin-inline-end: var(--vkui--size_button_group_gap_medium--regular);
 }
 
+.segmented.modeHorizontal > *:not(:first-child) {
+  border-start-start-radius: 2px;
+  border-end-start-radius: 2px;
+}
+
+.segmented.modeHorizontal > *:not(:last-child) {
+  border-start-end-radius: 2px;
+  border-end-end-radius: 2px;
+}
+
 /* stylelint-enable selector-max-universal */
 
 .modeVertical.alignLeft {

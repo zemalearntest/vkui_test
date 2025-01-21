@@ -32,26 +32,26 @@ export const Playground: Story = {
           {StretchedButtonText}
         </Button>
         <Button
-          size="m"
+          size="l"
           appearance="accent"
           before={<Icon24Add />}
           aria-label={ButtonWithIconLabel}
         />
         <Button
-          size="m"
+          size="l"
           appearance="accent"
           before={<Icon24Add />}
           aria-label={ButtonWithIconLabel}
           stretched
         />
         <Button
-          size="s"
+          size="l"
           appearance="accent"
           before={<Icon16Add />}
           aria-label={ButtonWithIconLabel}
         />
         <Button
-          size="s"
+          size="l"
           appearance="accent"
           before={<Icon16Add />}
           aria-label={ButtonWithIconLabel}

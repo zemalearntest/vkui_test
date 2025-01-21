@@ -12,6 +12,7 @@ const stylesGap = {
   space: styles.gapSpace,
   s: styles.gapS,
   m: styles.gapM,
+  none: undefined,
 };
 
 const stylesAlign = {
@@ -20,15 +21,21 @@ const stylesAlign = {
   right: styles.alignRight,
 };
 
-export interface ButtonGroupProps extends HTMLAttributesWithRootRef<HTMLDivElement> {
+type Gap = 'none' | 'space' | 's' | 'm';
+
+type Mode = 'vertical' | 'horizontal';
+
+export interface ButtonGroupProps<Segmented extends boolean = false>
+  extends HTMLAttributesWithRootRef<HTMLDivElement> {
+  segmented?: Segmented;
   /**
    * Задает расположение элементов внутри группы, вертикальное или горизонтальное.
    */
-  mode?: 'vertical' | 'horizontal';
+  mode?: Segmented extends false ? Mode : never;
   /**
    * Выставляет в зависимости от `mode` отступ по вертикали или горизонтали.
    */
-  gap?: 'none' | 'space' | 's' | 'm';
+  gap?: Segmented extends false ? Gap : never;
   /**
    * Растягивает компонент на всю ширину контейнера.
    *
@@ -44,19 +51,22 @@ export interface ButtonGroupProps extends HTMLAttributesWithRootRef<HTMLDivEleme
 /**
  * @see https://vkcom.github.io/VKUI/#/ButtonGroup
  */
-export const ButtonGroup = ({
-  mode = 'horizontal',
-  gap = 'm',
+export const ButtonGroup = <Segmented extends boolean = false>({
   stretched = false,
+  segmented,
   align = 'left' /* NOTE: Чтобы блоки по-умолчанию не растягивались на всю ширину контейнера */,
   ...restProps
-}: ButtonGroupProps): React.ReactNode => {
+}: ButtonGroupProps<Segmented>): React.ReactNode => {
+  const gap: Gap | undefined = segmented ? 'space' : restProps.gap;
+  const mode: Mode | undefined = segmented ? 'horizontal' : restProps.mode;
+
   return (
     <RootComponent
       baseClassName={classNames(
         styles.host,
-        stylesMode[mode],
-        gap !== 'none' && stylesGap[gap],
+        stylesMode[mode || 'horizontal'],
+        stylesGap[gap || 'm'],
+        segmented && styles.segmented,
         stretched && styles.stretched,
         stylesAlign[align],
       )}
