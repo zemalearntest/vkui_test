@@ -16,7 +16,7 @@
     "react-docgen-typescript": "^2.2.2",
     "react-dom": "*",
     "react-frame-component": "^5.2.7",
-    "react-styleguidist": "^13.1.2",
+    "react-styleguidist": "^13.1.4",
     "typescript": "*"
   }
 }
