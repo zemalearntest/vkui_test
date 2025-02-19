@@ -13,6 +13,7 @@ YARN_INFO_OUTPUT=$(yarn info @playwright/test --all --name-only);
 # ```js
 # const PLAYWRIGHT_VERSION = '└─ @playwright/test@npm:1.44.1'.split(':')[1];
 # ```
+#
 PLAYWRIGHT_VERSION=$(echo $YARN_INFO_OUTPUT | cut -f 2 -d :);
 
 # см. https://github.com/microsoft/playwright/blob/main/utils/docker/Dockerfile.noble
